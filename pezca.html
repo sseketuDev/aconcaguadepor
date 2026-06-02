@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Pesca - Aconcagua Deportes</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="pezca.css">
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20consultar%20sobre%20productos%20de%20pesca" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Main Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container main-header-content">
+            <a href="../index.html" class="logo-container">
+                <div class="logo-text">
+                    <div class="logo-main">ACONCAGUA DEPORTES</div>
+                    <div class="logo-sub">AVENTURA & NATURALEZA</div>
+                </div>
+            </a>
+            
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">Inicio</a>
+                <a href="caza.html" class="nav-link">Caza</a>
+                <a href="pezca.html" class="nav-link active">Pesca</a>
+                <a href="kayak.html" class="nav-link">Kayaks</a>
+                <a href="camping.html" class="nav-link">Camping</a>
+                <a href="../index.html#about" class="nav-link">Nosotros</a>
+                <a href="../index.html#map" class="nav-link">Ubicación</a>
+                <a href="../index.html#contact" class="nav-link">Contacto</a>
+            </nav>
+            
+            
+                <div class="header-actions">
+                    <div class="header-search" style="display:flex;align-items:center;gap:8px;">
+                        <input id="headerSearch" type="text" placeholder="Buscar kayaks, modelos o características..." />
+                        <button class="search-btn" title="Buscar" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+
+                    
+                    <button class="theme-toggle" id="themeToggle" title="Modo oscuro"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" title="Menú"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Catálogo de <span class="text-gradient">PESCA</span></h1>
+            <p>Todo lo que necesitas para tus aventuras de pesca deportiva</p>
+            <a href="../index.html#categories" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Volver a Categorías
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container section-padding">
+        <!-- Mobile Filter Toggle -->
+        <button class="mobile-filter-toggle" onclick="toggleFilters()">
+            <i class="fas fa-filter"></i> Mostrar Filtros
+        </button>
+
+        <div class="catalog-layout">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar" id="sidebar">
+                <!-- Category Filter -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-list"></i> Categorías</h3>
+                    <div class="filter-group">
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-canas" value="cañas" onchange="applyFilters()">
+                            <label for="cat-canas">Cañas de Pescar</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-reels" value="reels" onchange="applyFilters()">
+                            <label for="cat-reels">Reels</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-anzuelos" value="anzuelos" onchange="applyFilters()">
+                            <label for="cat-anzuelos">Anzuelos</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-lineas" value="líneas" onchange="applyFilters()">
+                            <label for="cat-lineas">Líneas y Sedales</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-señuelos" value="señuelos" onchange="applyFilters()">
+                            <label for="cat-señuelos">Señuelos</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-accesorios" value="accesorios" onchange="applyFilters()">
+                            <label for="cat-accesorios">Accesorios</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Filter -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-tag"></i> Marcas</h3>
+                    <div class="filter-group">
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-daiwa" value="daiwa" onchange="applyFilters()">
+                            <label for="brand-daiwa">Daiwa</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-shimano" value="shimano" onchange="applyFilters()">
+                            <label for="brand-shimano">Shimano</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-penn" value="penn" onchange="applyFilters()">
+                            <label for="brand-penn">Penn</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-abu-garcia" value="abu garcia" onchange="applyFilters()">
+                            <label for="brand-abu-garcia">Abu Garcia</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-okuma" value="okuma" onchange="applyFilters()">
+                            <label for="brand-okuma">Okuma</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-rapala" value="rapala" onchange="applyFilters()">
+                            <label for="brand-rapala">Rapala</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-dollar-sign"></i> Precio</h3>
+                    <div class="price-range">
+                        <div class="price-inputs">
+                            <input type="number" id="minPrice" placeholder="Mín" min="0" max="1000000">
+                            <input type="number" id="maxPrice" placeholder="Máx" min="0" max="1000000">
+                        </div>
+                        
+                        <div class="price-slider-container">
+                            <div class="price-slider-track"></div>
+                            <div class="price-slider-fill" id="priceSliderFill"></div>
+                            <input type="range" min="0" max="1000000" value="0" class="price-slider" id="minSlider">
+                            <input type="range" min="0" max="1000000" value="1000000" class="price-slider" id="maxSlider">
+                        </div>
+                        
+                        <div class="price-presets">
+                            <div class="price-preset" data-min="0" data-max="20000">Menos de $20.000</div>
+                            <div class="price-preset" data-min="20000" data-max="50000">$20.000 - $50.000</div>
+                            <div class="price-preset" data-min="50000" data-max="100000">$50.000 - $100.000</div>
+                            <div class="price-preset" data-min="100000" data-max="200000">$100.000 - $200.000</div>
+                        </div>
+                        
+                        <div class="price-display">
+                            Rango: <span id="selectedMinPrice">0</span> - <span id="selectedMaxPrice">1.000.000</span> <span class="currency">CLP</span>
+                        </div>
+                        
+                        <button class="apply-filters-btn" onclick="applyFilters()">
+                            <i class="fas fa-check"></i> Aplicar Filtros
+                        </button>
+                        <button class="clear-filters-btn" onclick="clearFilters()">
+                            <i class="fas fa-times"></i> Limpiar Filtros
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Condition Filter -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-star"></i> Condición</h3>
+                    <div class="filter-group">
+                        <div class="filter-option">
+                            <input type="checkbox" id="cond-new" value="new" onchange="applyFilters()">
+                            <label for="cond-new">Nuevo</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cond-sale" value="sale" onchange="applyFilters()">
+                            <label for="cond-sale">En Oferta</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cond-popular" value="popular" onchange="applyFilters()">
+                            <label for="cond-popular">Más Popular</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main>
+                <!-- Catalog Header -->
+                <div class="catalog-header">
+                    <div class="results-info">
+                        Mostrando <strong id="resultCount">0</strong> productos
+                    </div>
+                    <div class="sort-options">
+                        <label>Ordenar por:</label>
+                        <select id="sortSelect" onchange="sortProducts()">
+                            <option value="relevance">Relevancia</option>
+                            <option value="price-low">Precio: Menor a Mayor</option>
+                            <option value="price-high">Precio: Mayor a Menor</option>
+                            <option value="name-az">Nombre: A-Z</option>
+                            <option value="name-za">Nombre: Z-A</option>
+                            <option value="newest">Más Recientes</option>
+                        </select>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" onclick="setView('grid')">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" onclick="setView('list')">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Filters -->
+                <div class="active-filters" id="activeFilters"></div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Los productos se cargarán dinámicamente aquí -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta ajustar los filtros de búsqueda</p>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- La paginación se generará dinámicamente aquí -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container section-padding">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-main">ACONCAGUA DEPORTES</div>
+                        <div class="logo-sub">AVENTURA & NATURALEZA</div>
+                    </div>
+                    <p class="footer-description">Especialistas en equipamiento premium para caza, pesca y deportes al aire libre. Comprometidos con la calidad, la experiencia y la pasión por la aventura.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">CATÁLOGOS</h3>
+                    <ul class="footer-links">
+                        <li><a href="caza.html"><i class="fas fa-chevron-right"></i> Caza y Tiro Deportivo</a></li>
+                        <li><a href="pezca.html"><i class="fas fa-chevron-right"></i> Pesca Deportiva</a></li>
+                        <li><a href="kayak.html"><i class="fas fa-chevron-right"></i> Kayaks DUKHA</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Accesorios Profesionales</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ofertas Especiales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">ENLACES RÁPIDOS</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                        <li><a href="../index.html#map"><i class="fas fa-chevron-right"></i> Ubicación</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Política de Garantía</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">CONTACTO</h3>
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Aconcagua 1234, Providencia, Santiago, Chile</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+56 9 4144 6141</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contacto@aconcaguadeportes.cl</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Vie: 9:00 - 19:00<br>Sáb: 10:00 - 14:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aconcagua Deportes. Todos los derechos reservados. | Desarrollado con pasión por la aventura y la naturaleza</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // TEMA OSCURO / CLARO
+        // ============================================
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            htmlElement.classList.add('dark-mode');
+            updateThemeIcon();
+        } else if (savedTheme === 'light') {
+            htmlElement.classList.remove('dark-mode');
+            updateThemeIcon();
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlElement.classList.add('dark-mode');
+            updateThemeIcon();
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+            const isDark = htmlElement.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon();
+        });
+
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            if (htmlElement.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                themeToggle.title = 'Modo claro';
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                themeToggle.title = 'Modo oscuro';
+            }
+        }
+
+        // ============================================
+        // HEADER SCROLL EFFECT
+        // ============================================
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // MENÚ MÓVIL
+        // ============================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // ============================================
+        // CATÁLOGO DE PRODUCTOS - PESCA
+        // ============================================
+        const fishingData = [
+            {id: 1, name: "Caña Shimano Stimula 8'6\" Spinning", brand: "shimano", category: "cañas", price: 75990, condition: "popular", image: "https://images.unsplash.com/photo-1579586337278-3fed436c5c56?w=400", description: "Caña versátil de 2 piezas, ideal para principiantes y pescadores intermedios. Excelente acción y sensibilidad."},
+            {id: 2, name: "Caña Daiwa Aird-X 7'0\" Baitcasting", brand: "daiwa", category: "cañas", price: 89990, condition: "new", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Tecnología HVF para mejor sensibilidad y potencia. Ideal para lanzamiento de precisión."},
+            {id: 3, name: "Caña Penn Battle III 7'0\" Surf", brand: "penn", category: "cañas", price: 112990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Diseñada específicamente para pesca en agua salada desde la orilla. Gran poder y durabilidad."},
+            {id: 4, name: "Caña Abu Garcia Vendetta 6'6\"", brand: "abu garcia", category: "cañas", price: 68990, condition: "sale", image: "https://images.unsplash.com/photo-1599159341517-0b5c2b56e4b9?w=400", description: "Blank de carbono 30-ton, guías de alúmina. Excelente relación calidad-precio."},
+            {id: 5, name: "Reel Shimano Stradic 4000 FL", brand: "shimano", category: "reels", price: 189990, condition: "new", image: "https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=400", description: "Reel de spinning de alta gama con sistema Hagane Body y MicroModule Gear II."},
+            {id: 6, name: "Reel Daiwa BG 5000", brand: "daiwa", category: "reels", price: 149990, condition: "sale", image: "https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=400", description: "Cuerpo de aluminio maquinado, perfecto para pesca en agua salada. Gran capacidad de línea."},
+            {id: 7, name: "Reel Penn Fierce III 6000", brand: "penn", category: "reels", price: 79990, condition: "popular", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Tecnología HT-100, cuerpo sellado. Ideal para pesca costera y en kayak."},
+            {id: 8, name: "Reel Okuma Ceymar C-40", brand: "okuma", category: "reels", price: 45990, condition: "sale", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Excelente reel para principiantes, suave operación y buen rendimiento general."},
+            {id: 9, name: "Set Anzuelos Eagle Claw L417 50pcs", brand: "eagle claw", category: "anzuelos", price: 15990, condition: "popular", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Kit completo de anzuelos L417 en diferentes tamaños. Acero de alta calidad."},
+            {id: 10, name: "Anzuelos Circle Hook Mustad 2/0 25pcs", brand: "mustad", category: "anzuelos", price: 12990, condition: "new", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Anzuelos circulares que reducen daños a los peces. Ideal para pesca con carnada viva."},
+            {id: 11, name: "Anzuelos Tru-Turn 1/0 30pcs", brand: "eagle claw", category: "anzuelos", price: 18990, condition: "popular", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Diseño especial que gira naturalmente en la boca del pez. Mayor tasa de captura."},
+            {id: 12, name: "Línea Trenzada Power Pro 150m 30lb", brand: "power pro", category: "líneas", price: 29990, condition: "sale", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Línea trenzada de alta sensibilidad, cero estiramiento. Color verde musgo."},
+            {id: 13, name: "Sedal Monofilamento Berkley Trilene XL", brand: "berkley", category: "líneas", price: 18990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Excelente manejo, baja memoria. Ideal para spinning y baitcasting."},
+            {id: 14, name: "Línea Fluorocarbon Seaguar Red Label", brand: "seaguar", category: "líneas", price: 24990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Fluorocarbon de alta calidad, prácticamente invisible bajo el agua."},
+            {id: 15, name: "Señuelo Rapala Original Floater F11", brand: "rapala", category: "señuelos", price: 24990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Clásico señuelo flotante con acción de natación realista. Atrae depredadores."},
+            {id: 16, name: "Señuelo Popper Yo-Zuri 15cm", brand: "yo-zuri", category: "señuelos", price: 21990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Señuelo surface que crea ruido y salpicaduras. Ideal para robalos y sierras."},
+            {id: 17, name: "Jig de Pesca Bucktail 1oz 5 Colores", brand: "spro", category: "señuelos", price: 12990, condition: "sale", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Pack de 5 jigs bucktail en diferentes colores. Perfectos para fondo y medias aguas."},
+            {id: 18, name: "Señuelo Crankbait Strike King 4.5cm", brand: "strike king", category: "señuelos", price: 17990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Crankbait de natación profunda con sonajero interno. Excelente para truchas."},
+            {id: 19, name: "Caja de Pesca Plano 3600", brand: "plano", category: "accesorios", price: 19990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Caja organizadora con divisores ajustables. Compacta y resistente."},
+            {id: 20, name: "Red de Pesca Nylon Frabill 6'", brand: "frabill", category: "accesorios", price: 35990, condition: "sale", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Red plegable con mango extendible. Malla knotless para no dañar los peces."},
+            {id: 21, name: "Chaleco de Pesca Fishpond Thunderhead", brand: "fishpond", category: "accesorios", price: 89990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Chaleco técnico con múltiples bolsillos, portaseñuelos y sistema de hidratación."},
+            {id: 22, name: "Pinzas de Pesca Booms 20cm", brand: "booms", category: "accesorios", price: 15990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Pinzas largas de acero inoxidable, corta líneas y extrae anzuelos."},
+            {id: 23, name: "Balanza Digital Rapala 25kg", brand: "rapala", category: "accesorios", price: 28990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Balanza digital precisa hasta 25kg. Incluye gancho y función de tara."},
+            {id: 24, name: "Navaja de Pesca Gerber River Shorty", brand: "gerber", category: "accesorios", price: 42990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Navaja compacta resistente al agua, ideal para filetear y preparar carnadas."}
+        ];
+
+        let currentPage = 1;
+        const productsPerPage = 12;
+        let filteredProducts = [...fishingData];
+        let currentView = 'grid';
+
+        function initCatalog() {
+            initPriceSliders();
+            renderProducts();
+            updatePagination();
+            updateResultCount();
+            AOS.init({duration: 1000, once: true, offset: 100});
+        }
+
+        function initPriceSliders() {
+            const minSlider = document.getElementById('minSlider');
+            const maxSlider = document.getElementById('maxSlider');
+            const minPriceInput = document.getElementById('minPrice');
+            const maxPriceInput = document.getElementById('maxPrice');
+            const priceSliderFill = document.getElementById('priceSliderFill');
+            const selectedMinPrice = document.getElementById('selectedMinPrice');
+            const selectedMaxPrice = document.getElementById('selectedMaxPrice');
+            const pricePresets = document.querySelectorAll('.price-preset');
+
+            function formatNumber(num) {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+
+            function updatePriceSlider() {
+                const minValue = parseInt(minSlider.value);
+                const maxValue = parseInt(maxSlider.value);
+                
+                if (minValue > maxValue) {
+                    minSlider.value = maxValue;
+                    maxSlider.value = minValue;
+                    return updatePriceSlider();
+                }
+                
+                minPriceInput.value = minValue;
+                maxPriceInput.value = maxValue;
+                selectedMinPrice.textContent = formatNumber(minValue);
+                selectedMaxPrice.textContent = formatNumber(maxValue);
+                
+                const minPercent = (minValue / parseInt(minSlider.max)) * 100;
+                const maxPercent = (maxValue / parseInt(maxSlider.max)) * 100;
+                priceSliderFill.style.left = `${minPercent}%`;
+                priceSliderFill.style.width = `${maxPercent - minPercent}%`;
+            }
+
+            minSlider.addEventListener('input', updatePriceSlider);
+            maxSlider.addEventListener('input', updatePriceSlider);
+            
+            minPriceInput.addEventListener('input', function() {
+                minSlider.value = this.value || 0;
+                updatePriceSlider();
+            });
+            
+            maxPriceInput.addEventListener('input', function() {
+                maxSlider.value = this.value || 1000000;
+                updatePriceSlider();
+            });
+
+            pricePresets.forEach(preset => {
+                preset.addEventListener('click', function() {
+                    pricePresets.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                    minSlider.value = this.dataset.min;
+                    maxSlider.value = this.dataset.max;
+                    updatePriceSlider();
+                });
+            });
+
+            updatePriceSlider();
+        }
+
+        function renderProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+            if (productsToShow.length === 0) {
+                document.getElementById('emptyState').style.display = 'block';
+                productsGrid.style.display = 'none';
+                return;
+            }
+
+            document.getElementById('emptyState').style.display = 'none';
+            productsGrid.style.display = 'grid';
+
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-category', product.category);
+                productCard.setAttribute('data-brand', product.brand);
+                productCard.setAttribute('data-price', product.price);
+                productCard.setAttribute('data-condition', product.condition);
+                
+                let badgeClass = '';
+                let badgeText = '';
+                
+                if (product.condition === 'new') {
+                    badgeClass = 'new';
+                    badgeText = 'Nuevo';
+                } else if (product.condition === 'sale') {
+                    badgeClass = 'sale';
+                    badgeText = 'Oferta';
+                } else {
+                    badgeClass = 'popular';
+                    badgeText = 'Popular';
+                }
+
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <span class="product-badge ${badgeClass}">${badgeText}</span>
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=Imagen+No+Disponible'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand.toUpperCase()}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">$${product.price.toLocaleString('es-CL')}</div>
+                        <div class="product-actions">
+                            <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20el%20producto:%20${encodeURIComponent(product.name)}" class="btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consultar
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                productsGrid.appendChild(productCard);
+            });
+
+            if (currentView === 'list') {
+                productsGrid.classList.add('list-view');
+            } else {
+                productsGrid.classList.remove('list-view');
+            }
+        }
+
+        function applyFilters() {
+            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked')).map(cb => cb.value);
+            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked')).map(cb => cb.value);
+            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked')).map(cb => cb.value);
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || 1000000;
+            const searchTerm = document.getElementById('headerSearch') ? document.getElementById('headerSearch').value.toLowerCase() : '';
+
+            filteredProducts = fishingData.filter(product => {
+                if (selectedCategories.length > 0 && !selectedCategories.includes(product.category)) return false;
+                if (selectedBrands.length > 0 && !selectedBrands.includes(product.brand)) return false;
+                if (selectedConditions.length > 0 && !selectedConditions.includes(product.condition)) return false;
+                if (product.price < minPrice || product.price > maxPrice) return false;
+                if (searchTerm && !product.name.toLowerCase().includes(searchTerm) && 
+                    !product.brand.toLowerCase().includes(searchTerm) && 
+                    !product.description.toLowerCase().includes(searchTerm)) return false;
+                return true;
+            });
+
+            currentPage = 1;
+            renderProducts();
+            updatePagination();
+            updateResultCount();
+            updateActiveFilters();
+        }
+
+        function clearFilters() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            document.getElementById('minPrice').value = '';
+            document.getElementById('maxPrice').value = '';
+            
+            document.getElementById('minSlider').value = 0;
+            document.getElementById('maxSlider').value = 1000000;
+            document.getElementById('priceSliderFill').style.left = '0%';
+            document.getElementById('priceSliderFill').style.width = '100%';
+            
+            document.querySelectorAll('.price-preset').forEach(p => p.classList.remove('active'));
+            document.getElementById('selectedMinPrice').textContent = '0';
+            document.getElementById('selectedMaxPrice').textContent = '1.000.000';
+            
+            applyFilters();
+        }
+
+        function updateResultCount() {
+            document.getElementById('resultCount').textContent = filteredProducts.length;
+        }
+
+        function updateActiveFilters() {
+            const container = document.getElementById('activeFilters');
+            container.innerHTML = '';
+            
+            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked'));
+            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked'));
+            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked'));
+            
+            selectedCategories.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+            
+            selectedBrands.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+            
+            selectedConditions.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+        }
+
+        function removeFilter(id) {
+            document.getElementById(id).checked = false;
+            applyFilters();
+        }
+
+        function sortProducts() {
+            const sortValue = document.getElementById('sortSelect').value;
+            
+            filteredProducts.sort((a, b) => {
+                switch(sortValue) {
+                    case 'price-low':
+                        return a.price - b.price;
+                    case 'price-high':
+                        return b.price - a.price;
+                    case 'name-az':
+                        return a.name.localeCompare(b.name);
+                    case 'name-za':
+                        return b.name.localeCompare(a.name);
+                    case 'newest':
+                        return b.id - a.id;
+                    default:
+                        return 0;
+                }
+            });
+            
+            currentPage = 1;
+            renderProducts();
+            updatePagination();
+        }
+
+        function updatePagination() {
+            const pagination = document.getElementById('pagination');
+            const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            
+            let paginationHTML = '';
+            paginationHTML += `<button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i> Anterior</button>`;
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    paginationHTML += `<button class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    paginationHTML += `<button class="pagination-btn" disabled>...</button>`;
+                }
+            }
+            
+            paginationHTML += `<button class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Siguiente <i class="fas fa-chevron-right"></i></button>`;
+            pagination.innerHTML = paginationHTML;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderProducts();
+            updatePagination();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setView(view) {
+            currentView = view;
+            const grid = document.getElementById('productsGrid');
+            const buttons = document.querySelectorAll('.view-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            if (view === 'list') {
+                grid.classList.add('list-view');
+            } else {
+                grid.classList.remove('list-view');
+            }
+        }
+
+        function toggleFilters() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initCatalog();
+
+            // Buscar al presionar Enter en el header
+            const hs = document.getElementById('headerSearch');
+            if (hs) {
+                hs.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') applyFilters();
+                });
+            }
+
+            // Botón de búsqueda en header
+            const searchBtn = document.querySelector('.search-btn');
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    applyFilters();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

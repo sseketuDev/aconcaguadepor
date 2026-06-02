@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Catálogo Caza - Aconcagua Deportes</title>
+
+    <!-- Fuentes & Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="caza.css"/>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20consultar%20sobre%20productos%20de%20caza" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Main Header (igual al index) -->
+    <header class="main-header" id="mainHeader">
+        <div class="container main-header-content">
+            <a href="../index.html" class="logo-container">
+                <div class="logo-text">
+                    <div class="logo-main">ACONCAGUA DEPORTES</div>
+                    <div class="logo-sub">AVENTURA & NATURALEZA</div>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">Inicio</a>
+                <a href="caza.html" class="nav-link active">Caza</a>
+                <a href="pezca.html" class="nav-link">Pesca</a>
+                <a href="kayak.html" class="nav-link">Kayaks</a>
+                <a href="camping.html" class="nav-link">Camping</a>
+                <a href="../index.html#about" class="nav-link">Nosotros</a>
+                <a href="../index.html#map" class="nav-link">Ubicación</a>
+                <a href="../index.html#contact" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="header-search" style="display:flex;align-items:center;gap:8px;">
+                    <input id="headerSearch" type="text" placeholder="Buscar productos..." />
+                    <button class="search-btn" title="Buscar" type="button"><i class="fas fa-search"></i></button>
+                </div>
+
+                
+                <button class="theme-toggle" id="themeToggle" title="Modo oscuro"><i class="fas fa-moon"></i></button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" title="Menú"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero (estilo similar al index pero específico) -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h1>Catálogo de <span class="text-gradient">CAZA</span></h1>
+            <p>Encuentra todo lo que necesitas para tus aventuras de caza</p>
+            <a href="../index.html#categories" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver</a>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container section-padding">
+        <button class="mobile-filter-toggle" onclick="toggleFilters()"><i class="fas fa-filter"></i> Filtros</button>
+
+        <div class="catalog-layout">
+            <!-- Sidebar Filters (reutilizado) -->
+            <aside class="sidebar" id="sidebar">
+                <!-- Categorías -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-list"></i> Categorías</h3>
+                    <div class="filter-group">
+                        <div class="filter-option"><input type="checkbox" id="cat-rifles" value="rifles" onchange="applyFilters()"><label for="cat-rifles">Rifles de Aire</label></div>
+                        <div class="filter-option"><input type="checkbox" id="cat-pistolas" value="pistolas" onchange="applyFilters()"><label for="cat-pistolas">Pistolas</label></div>
+                        <div class="filter-option"><input type="checkbox" id="cat-miras" value="miras" onchange="applyFilters()"><label for="cat-miras">Miras y Ópticas</label></div>
+                        <div class="filter-option"><input type="checkbox" id="cat-balines" value="balines" onchange="applyFilters()"><label for="cat-balines">Balines y Municiones</label></div>
+                        <div class="filter-option"><input type="checkbox" id="cat-accesorios" value="accesorios" onchange="applyFilters()"><label for="cat-accesorios">Accesorios</label></div>
+                        <div class="filter-option"><input type="checkbox" id="cat-seguridad" value="seguridad" onchange="applyFilters()"><label for="cat-seguridad">Equipo de Seguridad</label></div>
+                    </div>
+                </div>
+
+                <!-- Marcas -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-tag"></i> Marcas</h3>
+                    <div class="filter-group">
+                        <div class="filter-option"><input type="checkbox" id="brand-gamo" value="gamo" onchange="applyFilters()"><label for="brand-gamo">Gamo</label></div>
+                        <div class="filter-option"><input type="checkbox" id="brand-daisy" value="daisy" onchange="applyFilters()"><label for="brand-daisy">Daisy</label></div>
+                        <div class="filter-option"><input type="checkbox" id="brand-umarex" value="umarex" onchange="applyFilters()"><label for="brand-umarex">Umarex</label></div>
+                        <div class="filter-option"><input type="checkbox" id="brand-beeman" value="beeman" onchange="applyFilters()"><label for="brand-beeman">Beeman</label></div>
+                        <div class="filter-option"><input type="checkbox" id="brand-browning" value="browning" onchange="applyFilters()"><label for="brand-browning">Browning</label></div>
+                        <div class="filter-option"><input type="checkbox" id="brand-k25" value="k25" onchange="applyFilters()"><label for="brand-k25">K25</label></div>
+                        <div class="filter-option"><input type="checkbox" id="brand-diana" value="diana" onchange="applyFilters()"><label for="brand-diana">DIANA</label></div>
+                    </div>
+                </div>
+
+                <!-- Precio -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-dollar-sign"></i> Precio</h3>
+                    <div class="price-range">
+                        <div class="price-inputs">
+                            <input type="number" id="minPrice" placeholder="Mín" min="0" max="250000">
+                            <input type="number" id="maxPrice" placeholder="Máx" min="0" max="250000">
+                        </div>
+                        <div class="price-slider-container">
+                            <div class="price-slider-track"></div>
+                            <div class="price-slider-fill" id="priceSliderFill"></div>
+                            <input type="range" min="0" max="250000" value="0" class="price-slider" id="minSlider">
+                            <input type="range" min="0" max="250000" value="250000" class="price-slider" id="maxSlider">
+                        </div>
+                        <div class="price-presets">
+                            <div class="price-preset" data-min="0" data-max="50000">Menos de $50.000</div>
+                            <div class="price-preset" data-min="50000" data-max="100000">$50.000 - $100.000</div>
+                            <div class="price-preset" data-min="100000" data-max="150000">$100.000 - $150.000</div>
+                            <div class="price-preset" data-min="150000" data-max="250000">$150.000 - $250.000</div>
+                        </div>
+                        <div class="price-display">Rango: <span id="selectedMinPrice">0</span> - <span id="selectedMaxPrice">250.000</span> CLP</div>
+                        <button class="apply-filters-btn" onclick="applyFilters()"><i class="fas fa-check"></i> Aplicar</button>
+                        <button class="clear-filters-btn" onclick="clearFilters()"><i class="fas fa-times"></i> Limpiar</button>
+                    </div>
+                </div>
+
+                <!-- Condición -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-star"></i> Condición</h3>
+                    <div class="filter-group">
+                        <div class="filter-option"><input type="checkbox" id="cond-new" value="new" onchange="applyFilters()"><label for="cond-new">Nuevo</label></div>
+                        <div class="filter-option"><input type="checkbox" id="cond-sale" value="sale" onchange="applyFilters()"><label for="cond-sale">En Oferta</label></div>
+                        <div class="filter-option"><input type="checkbox" id="cond-popular" value="popular" onchange="applyFilters()"><label for="cond-popular">Más Popular</label></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main>
+                <div class="catalog-header">
+                    <div class="results-info">Mostrando <strong id="resultCount">0</strong> productos</div>
+                    <div class="sort-options">
+                        <label>Ordenar por:</label>
+                        <select id="sortSelect" onchange="sortProducts()">
+                            <option value="relevance">Relevancia</option>
+                            <option value="price-low">Precio: Menor a Mayor</option>
+                            <option value="price-high">Precio: Mayor a Menor</option>
+                            <option value="name-az">Nombre: A-Z</option>
+                            <option value="name-za">Nombre: Z-A</option>
+                            <option value="newest">Más Recientes</option>
+                        </select>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" onclick="setView('grid')"><i class="fas fa-th"></i></button>
+                        <button class="view-btn" onclick="setView('list')"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+
+                <div class="active-filters" id="activeFilters"></div>
+
+                <div class="products-grid" id="productsGrid"></div>
+
+                <div class="empty-state" id="emptyState" style="display:none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta ajustar los filtros</p>
+                </div>
+
+                <div class="pagination" id="pagination"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer (igual al index) -->
+    <footer class="footer" id="contact">
+        <div class="container section-padding">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-main">ACONCAGUA DEPORTES</div>
+                        <div class="logo-sub">AVENTURA &amp; NATURALEZA</div>
+                    </div>
+                    <p class="footer-description">Especialistas en equipamiento premium para caza, pesca y deportes al aire libre.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">CATÁLOGOS</h3>
+                    <ul class="footer-links">
+                        <li><a href="caza.html"><i class="fas fa-chevron-right"></i> Caza y Tiro Deportivo</a></li>
+                        <li><a href="pezca.html"><i class="fas fa-chevron-right"></i> Pesca Deportiva</a></li>
+                        <li><a href="kayak.html"><i class="fas fa-chevron-right"></i> Kayaks DUKHA</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">ENLACES RÁPIDOS</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                        <li><a href="index.html#map"><i class="fas fa-chevron-right"></i> Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">CONTACTO</h3>
+                    <ul class="contact-info-footer">
+                        <li><i class="fas fa-map-marker-alt"></i>🏢Edificio Prat #740, local 22, San Felipe.</li>
+                        <li><i class="fas fa-phone"></i> +56 9 4144 6141</li>
+                        <li><i class="fas fa-envelope"></i> contacto@aconcaguadeportes.cl</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom"><p>&copy; 2025 Aconcagua Deportes. Todos los derechos reservados.</p></div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        // Tema oscuro / claro
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark-mode');
+        }
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            if (htmlElement.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); themeToggle.title = 'Modo claro';
+            } else {
+                icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); themeToggle.title = 'Modo oscuro';
+            }
+        }
+        if (themeToggle) {
+            updateThemeIcon();
+            themeToggle.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark-mode');
+                localStorage.setItem('theme', htmlElement.classList.contains('dark-mode') ? 'dark' : 'light');
+                updateThemeIcon();
+            });
+        }
+
+        // Header scroll
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+        });
+
+        // Menú móvil
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+        }
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Búsqueda rápida en header
+        const headerSearch = document.getElementById('headerSearch');
+        const searchBtn = document.querySelector('.search-btn');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', () => {
+                applyFilters();
+            });
+        }
+        if (headerSearch) {
+            headerSearch.addEventListener('keypress', (e) => { if (e.key === 'Enter') applyFilters(); });
+        }
+
+        // Inicializar AOS
+        AOS.init({ offset: 100, once: true, duration: 800 });
+
+        // -------------------------------------------------
+        // Catálogo (usa los datos y funciones ya presentes)
+        // -------------------------------------------------
+        // Datos de productos de caza
+        const huntingData = [
+            // Rifles de Aire
+            {id: 1, name: "Rifle Gamo Shadow 1000", brand: "gamo", category: "rifles", price: 129990, condition: "sale", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Rifle de aire comprimido de alta potencia con cañón de acero."},
+            {id: 2, name: "Rifle Diana 350 Magnum", brand: "diana", category: "rifles", price: 189990, condition: "new", image: "https://images.unsplash.com/photo-1595599512946-4c0d0b0c0239?w=400", description: "Rifle de resorte de alta potencia ideal para caza mayor."},
+            {id: 3, name: "Rifle Beeman R9", brand: "beeman", category: "rifles", price: 219990, condition: "popular", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Rifle de alta precisión con mecanismo de resorte avanzado."},
+            {id: 4, name: "Rifle Browning Leverage", brand: "browning", category: "rifles", price: 159990, condition: "new", image: "https://images.unsplash.com/photo-1595599512946-4c0d0b0c0239?w=400", description: "Rifle de palanca con diseño ergonómico y gran precisión."},
+            
+            // Pistolas
+            {id: 5, name: "Pistola Umarex Beretta PX4", brand: "umarex", category: "pistolas", price: 89990, condition: "popular", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Pistola CO2 con diseño realista y sistema de blowback."},
+            {id: 6, name: "Pistola Gamo PT-85", brand: "gamo", category: "pistolas", price: 75990, condition: "sale", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Pistola de aire comprimido con cargador de 16 balines."},
+            {id: 7, name: "Pistola Daisy Powerline 340", brand: "daisy", category: "pistolas", price: 45990, condition: "new", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Pistola de resorte ideal para práctica de tiro."},
+            
+            // Miras y Ópticas
+            {id: 8, name: "Mira Telescópica K25 4x32", brand: "k25", category: "miras", price: 29990, condition: "popular", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Mira telescópica con lentes multi-revestidas para mejor visión."},
+            {id: 9, name: "Mira Gamo 4x32", brand: "gamo", category: "miras", price: 34990, condition: "new", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Mira de alta calidad con ajuste fino de elevación y viento."},
+            {id: 10, name: "Mira Red Dot SAGA RD30", brand: "saga", category: "miras", price: 24990, condition: "sale", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Mira de punto rojo con 4 retículas diferentes."},
+            
+            // Balines y Municiones
+            {id: 11, name: "Balines Gamo Hunter 500uds", brand: "gamo", category: "balines", price: 8990, condition: "popular", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Balines de plomo de alta densidad para máxima penetración."},
+            {id: 12, name: "Balines Daisy Precision Max 1000uds", brand: "daisy", category: "balines", price: 6990, condition: "new", image: "https://images.unsplash.com-1595599513121-3f0a8938f8e9?w=400", description: "Balines de precisión para competición y práctica."},
+            {id: 13, name: "CO2 Umarex 12g 10 Cartuchos", brand: "umarex", category: "balines", price: 12990, condition: "sale", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Cartuchos de CO2 de 12g para pistolas y rifles."},
+            
+            // Accesorios
+            {id: 14, name: "Soporte Rifle SAGA Bipod", brand: "saga", category: "accesorios", price: 19990, condition: "new", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Bipod ajustable para mayor estabilidad en disparos."},
+            {id: 15, name: "Cargador Rápido Beeman", brand: "beeman", category: "accesorios", price: 8990, condition: "popular", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Cargador rápido para balines de diferentes calibres."},
+            {id: 16, name: "Estuche RAPALA para Rifle", brand: "rapala", category: "accesorios", price: 29990, condition: "sale", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Estuche rígido con espuma moldeable para protección."},
+            
+            // Equipo de Seguridad
+            {id: 17, name: "Gafas de Seguridad DIANA", brand: "diana", category: "seguridad", price: 7990, condition: "new", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Gafas de protección anti-impacto con protección UV."},
+            {id: 18, name: "Silenciador Browning", brand: "browning", category: "accesorios", price: 24990, condition: "popular", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Silenciador para reducir el sonido de disparo."},
+            {id: 19, name: "Blanco de Tiro Daisy", brand: "daisy", category: "accesorios", price: 4990, condition: "sale", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Blanco de práctica con sistema de auto-avance."},
+            {id: 20, name: "Kit Limpieza Umarex", brand: "umarex", category: "accesorios", price: 12990, condition: "new", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Kit completo para limpieza y mantenimiento de armas."}
+        ];
+
+        // Variables globales
+        let currentPage = 1;
+        const productsPerPage = 12;
+        let filteredProducts = [...huntingData];
+        let currentView = 'grid';
+
+        // Inicializar el catálogo
+        function initCatalog() {
+            initPriceSliders();
+            renderProducts();
+            updatePagination();
+            updateResultCount();
+        }
+
+        // Inicializar sliders de precio
+        function initPriceSliders() {
+            const minSlider = document.getElementById('minSlider');
+            const maxSlider = document.getElementById('maxSlider');
+            const minPriceInput = document.getElementById('minPrice');
+            const maxPriceInput = document.getElementById('maxPrice');
+            const priceSliderFill = document.getElementById('priceSliderFill');
+            const selectedMinPrice = document.getElementById('selectedMinPrice');
+            const selectedMaxPrice = document.getElementById('selectedMaxPrice');
+            const pricePresets = document.querySelectorAll('.price-preset');
+
+            // Función para formatear números con separadores de miles
+            function formatNumber(num) {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+
+            // Función para actualizar el slider de rango
+            function updatePriceSlider() {
+                const minValue = parseInt(minSlider.value);
+                const maxValue = parseInt(maxSlider.value);
+                
+                // Asegurar que min no sea mayor que max
+                if (minValue > maxValue) {
+                    minSlider.value = maxValue;
+                    maxSlider.value = minValue;
+                    return updatePriceSlider();
+                }
+                
+                // Actualizar inputs
+                minPriceInput.value = minValue;
+                maxPriceInput.value = maxValue;
+                
+                // Actualizar display
+                selectedMinPrice.textContent = formatNumber(minValue);
+                selectedMaxPrice.textContent = formatNumber(maxValue);
+                
+                // Actualizar el relleno del slider
+                const minPercent = (minValue / parseInt(minSlider.max)) * 100;
+                const maxPercent = (maxValue / parseInt(maxSlider.max)) * 100;
+                priceSliderFill.style.left = `${minPercent}%`;
+                priceSliderFill.style.width = `${maxPercent - minPercent}%`;
+            }
+
+            // Sincronizar sliders con inputs
+            minSlider.addEventListener('input', updatePriceSlider);
+            maxSlider.addEventListener('input', updatePriceSlider);
+            
+            minPriceInput.addEventListener('input', function() {
+                minSlider.value = this.value || 0;
+                updatePriceSlider();
+            });
+            
+            maxPriceInput.addEventListener('input', function() {
+                maxSlider.value = this.value || 250000;
+                updatePriceSlider();
+            });
+
+            // Configurar presets de precio
+            pricePresets.forEach(preset => {
+                preset.addEventListener('click', function() {
+                    // Remover clase active de todos los presets
+                    pricePresets.forEach(p => p.classList.remove('active'));
+                    
+                    // Agregar clase active al preset seleccionado
+                    this.classList.add('active');
+                    
+                    // Establecer valores mínimos y máximos
+                    minSlider.value = this.dataset.min;
+                    maxSlider.value = this.dataset.max;
+                    updatePriceSlider();
+                });
+            });
+
+            // Inicializar display
+            updatePriceSlider();
+        }
+
+        // Renderizar productos
+        function renderProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+            if (productsToShow.length === 0) {
+                document.getElementById('emptyState').style.display = 'block';
+                productsGrid.style.display = 'none';
+                return;
+            }
+
+            document.getElementById('emptyState').style.display = 'none';
+            productsGrid.style.display = 'grid';
+
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-category', product.category);
+                productCard.setAttribute('data-brand', product.brand);
+                productCard.setAttribute('data-price', product.price);
+                productCard.setAttribute('data-condition', product.condition);
+                
+                // Determinar el tipo de badge
+                let badgeClass = '';
+                let badgeText = '';
+                
+                if (product.condition === 'new') {
+                    badgeClass = 'new';
+                    badgeText = 'Nuevo';
+                } else if (product.condition === 'sale') {
+                    badgeClass = 'sale';
+                    badgeText = 'Oferta';
+                } else {
+                    badgeClass = 'popular';
+                    badgeText = 'Popular';
+                }
+
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <span class="product-badge ${badgeClass}">${badgeText}</span>
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=Imagen+No+Disponible'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand.toUpperCase()}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">$${product.price.toLocaleString('es-CL')}</div>
+                        <div class="product-actions">
+                            <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20el%20producto:%20${encodeURIComponent(product.name)}" class="btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consultar
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                productsGrid.appendChild(productCard);
+            });
+
+            // Aplicar vista actual
+            if (currentView === 'list') {
+                productsGrid.classList.add('list-view');
+            } else {
+                productsGrid.classList.remove('list-view');
+            }
+        }
+
+        // Aplicar filtros
+        function applyFilters() {
+            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked')).map(cb => cb.value);
+            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked')).map(cb => cb.value);
+            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked')).map(cb => cb.value);
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || 250000;
+            const searchTerm = document.getElementById('headerSearch').value.toLowerCase();
+
+            filteredProducts = huntingData.filter(product => {
+                // Filtro por categoría
+                if (selectedCategories.length > 0 && !selectedCategories.includes(product.category)) {
+                    return false;
+                }
+
+                // Filtro por marca
+                if (selectedBrands.length > 0 && !selectedBrands.includes(product.brand)) {
+                    return false;
+                }
+
+                // Filtro por condición
+                if (selectedConditions.length > 0 && !selectedConditions.includes(product.condition)) {
+                    return false;
+                }
+
+                // Filtro por precio
+                if (product.price < minPrice || product.price > maxPrice) {
+                    return false;
+                }
+
+                // Filtro por búsqueda
+                if (searchTerm && !product.name.toLowerCase().includes(searchTerm) && 
+                    !product.brand.toLowerCase().includes(searchTerm) && 
+                    !product.description.toLowerCase().includes(searchTerm)) {
+                    return false;
+                }
+
+                return true;
+            });
+
+            currentPage = 1;
+            renderProducts();
+            updatePagination();
+            updateResultCount();
+            updateActiveFilters();
+        }
+
+        // Limpiar filtros
+        function clearFilters() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            document.getElementById('minPrice').value = '';
+            document.getElementById('maxPrice').value = '';
+            document.getElementById('headerSearch').value = '';
+            
+            // Resetear sliders
+            document.getElementById('minSlider').value = 0;
+            document.getElementById('maxSlider').value = 250000;
+            document.getElementById('priceSliderFill').style.left = '0%';
+            document.getElementById('priceSliderFill').style.width = '100%';
+            
+            // Resetear presets
+            document.querySelectorAll('.price-preset').forEach(p => p.classList.remove('active'));
+            
+            // Actualizar display
+            document.getElementById('selectedMinPrice').textContent = '0';
+            document.getElementById('selectedMaxPrice').textContent = '250.000';
+            
+            applyFilters();
+        }
+
+        // Actualizar contador de resultados
+        function updateResultCount() {
+            document.getElementById('resultCount').textContent = filteredProducts.length;
+        }
+
+        // Actualizar filtros activos
+        function updateActiveFilters() {
+            const container = document.getElementById('activeFilters');
+            container.innerHTML = '';
+            
+            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked'));
+            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked'));
+            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked'));
+            
+            selectedCategories.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+            
+            selectedBrands.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+            
+            selectedConditions.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+        }
+
+        // Eliminar filtro
+        function removeFilter(id) {
+            document.getElementById(id).checked = false;
+            applyFilters();
+        }
+
+        // Ordenar productos
+        function sortProducts() {
+            const sortValue = document.getElementById('sortSelect').value;
+            
+            filteredProducts.sort((a, b) => {
+                switch(sortValue) {
+                    case 'price-low':
+                        return a.price - b.price;
+                    case 'price-high':
+                        return b.price - a.price;
+                    case 'name-az':
+                        return a.name.localeCompare(b.name);
+                    case 'name-za':
+                        return b.name.localeCompare(a.name);
+                    case 'newest':
+                        return b.id - a.id;
+                    default:
+                        return 0;
+                }
+            });
+            
+            currentPage = 1;
+            renderProducts();
+            updatePagination();
+        }
+
+        // Actualizar paginación
+        function updatePagination() {
+            const pagination = document.getElementById('pagination');
+            const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            
+            let paginationHTML = '';
+            
+            // Botón anterior
+            paginationHTML += `<button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i> Anterior</button>`;
+            
+            // Páginas
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    paginationHTML += `<button class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    paginationHTML += `<button class="pagination-btn" disabled>...</button>`;
+                }
+            }
+            
+            // Botón siguiente
+            paginationHTML += `<button class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Siguiente <i class="fas fa-chevron-right"></i></button>`;
+            
+            pagination.innerHTML = paginationHTML;
+        }
+
+        // Cambiar página
+        function changePage(page) {
+            currentPage = page;
+            renderProducts();
+            updatePagination();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Establecer vista (grid o lista)
+        function setView(view) {
+            currentView = view;
+            const grid = document.getElementById('productsGrid');
+            const buttons = document.querySelectorAll('.view-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            if (view === 'list') {
+                grid.classList.add('list-view');
+            } else {
+                grid.classList.remove('list-view');
+            }
+        }
+
+        // Buscar productos
+        function searchProducts() {
+            applyFilters();
+        }
+
+        // Alternar filtros en móvil
+        function toggleFilters() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Inicializar cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            initCatalog();
+            
+            // Buscar al presionar Enter
+            document.getElementById('headerSearch').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchProducts();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
