@@ -264,43 +264,7 @@
 
     <script>
         // Datos de productos de camping
-        const campingData = [
-            // Carpas y Refugios
-            {id: 1, name: "Carpa The North Face 4 Personas", brand: "northface", category: "carpa", price: 189990, condition: "popular", image: "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=400", description: "Carpa impermeable para 4 personas, ideal para familia."},
-            {id: 2, name: "Carpa Columbia 2 Personas", brand: "columbia", category: "carpa", price: 129990, condition: "new", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400", description: "Carpa liviana y compacta para 2 personas."},
-            {id: 3, name: "Refugio MSR Hubba Hubba", brand: "msr", category: "carpa", price: 249990, condition: "sale", image: "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=400", description: "Refugio técnico de 2 personas, ultra liviano."},
-            {id: 4, name: "Carpa Familiar Salewa 6P", brand: "salewa", category: "carpa", price: 219990, condition: "popular", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400", description: "Carpa espaciosa para 6 personas, resistente al agua."},
-            
-            // Sacos de Dormir
-            {id: 5, name: "Saco de Dormir North Face -5°C", brand: "northface", category: "sleeping", price: 89990, condition: "new", image: "https://images.unsplash.com/photo-1543332143-4d0c6fbf1e74?w=400", description: "Saco de dormir para temperaturas hasta -5°C."},
-            {id: 6, name: "Saco Columbia +5°C", brand: "columbia", category: "sleeping", price: 75990, condition: "sale", image: "https://images.unsplash.com/photo-1543332143-4d0c6fbf1e74?w=400", description: "Saco liviano para clima templado, compactable."},
-            {id: 7, name: "Saco Black Diamond -10°C", brand: "blackdiamond", category: "sleeping", price: 139990, condition: "popular", image: "https://images.unsplash.com/photo-1543332143-4d0c6fbf1e74?w=400", description: "Saco técnico para alta montaña, pluma de ganso."},
-            
-            // Cocina de Camping
-            {id: 8, name: "Cocina Primus Classic", brand: "primus", category: "cocina", price: 45990, condition: "popular", image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=400", description: "Cocina a gas portátil, incluye estuche."},
-            {id: 9, name: "Juego de Ollas MSR", brand: "msr", category: "cocina", price: 69990, condition: "new", image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=400", description: "Set de 3 ollas con tapa, material antiadherente."},
-            {id: 10, name: "Termo Acero Inoxidable 1L", brand: "salewa", category: "cocina", price: 29990, condition: "sale", image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=400", description: "Termo de acero inoxidable, mantiene temperatura 24h."},
-            
-            // Mochilas y Equipaje
-            {id: 11, name: "Mochila Osprey 65L", brand: "osprey", category: "mochila", price: 129990, condition: "popular", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400", description: "Mochila de trekking 65 litros, sistema anti-agua."},
-            {id: 12, name: "Mochila North Face 40L", brand: "northface", category: "mochila", price: 89990, condition: "new", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400", description: "Mochila día 40 litros, múltiples compartimentos."},
-            {id: 13, name: "Mochila Salewa 30L", brand: "salewa", category: "mochila", price: 65990, condition: "sale", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400", description: "Mochila hidratación 30L, incluye bolsa de agua."},
-            
-            // Iluminación
-            {id: 14, name: "Linterna Frontál Petzl", brand: "petzl", category: "iluminacion", price: 34990, condition: "new", image: "https://images.unsplash.com/photo-1518834103328-93d45986dce1?w=400", description: "Linterna frontal recargable, 300 lúmenes."},
-            {id: 15, name: "Lámpara Camping Black Diamond", brand: "blackdiamond", category: "iluminacion", price: 29990, condition: "popular", image: "https://images.unsplash.com/photo-1518834103328-93d45986dce1?w=400", description: "Lámpara LED para carpa, 360° iluminación."},
-            {id: 16, name: "Kit Iluminación Columbia", brand: "columbia", category: "iluminacion", price: 45990, condition: "sale", image: "https://images.unsplash.com/photo-1518834103328-93d45986dce1?w=400", description: "Kit completo: frontal, lámpara y linterna."},
-            
-            // Accesorios
-            {id: 17, name: "Colchón Inflable Salewa", brand: "salewa", category: "accesorios", price: 39990, condition: "new", image: "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=400", description: "Colchón autoinflable, grosor 7.5cm."},
-            {id: 18, name: "Silla Plegable North Face", brand: "northface", category: "accesorios", price: 34990, condition: "popular", image: "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=400", description: "Silla camping plegable, soporta 120kg."},
-            {id: 19, name: "Set Herramientas MSR", brand: "msr", category: "accesorios", price: 24990, condition: "sale", image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=400", description: "Set multiusos: martillo, piola, estacas."},
-            {id: 20, name: "Bolsa Estanca Osprey 20L", brand: "osprey", category: "accesorios", price: 19990, condition: "new", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400", description: "Bolsa estanca para proteger equipo electrónico."},
-            {id: 21, name: "Cuerda Paracord 50m", brand: "blackdiamond", category: "accesorios", price: 15990, condition: "popular", image: "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=400", description: "Cuerda paracord 550, múltiples usos."},
-            {id: 22, name: "Set Cubiertos Camping", brand: "primus", category: "accesorios", price: 12990, condition: "sale", image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=400", description: "Set 4 personas: cubiertos de acero inoxidable."},
-            {id: 23, name: "Brujula y GPS Petzl", brand: "petzl", category: "accesorios", price: 45990, condition: "new", image: "https://images.unsplash.com/photo-1518834103328-93d45986dce1?w=400", description: "Kit navegación: brújula profesional y GPS básico."},
-            {id: 24, name: "Botiquín Primeros Auxilios", brand: "columbia", category: "accesorios", price: 29990, condition: "popular", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400", description: "Botiquín completo para camping y trekking."}
-        ];
+        // ⚠️ Los productos se cargan desde productos-camping.js
 
         // Variables globales
         let currentPage = 1;
@@ -756,6 +720,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q1n6Q3Q3Q3Q3Q3Q3Q3Q3Q3Q3Q3Q3Q&callback=initMap" async defer></script>
+    <!-- ✅ PRODUCTOS: edita solo este archivo para agregar/cambiar productos -->
+    <script src="productos-camping.js"></script>
+
     <script>
         // ============================================
         // TEMA OSCURO / CLARO

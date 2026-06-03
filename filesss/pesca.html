@@ -49,7 +49,7 @@
             
                 <div class="header-actions">
                     <div class="header-search" style="display:flex;align-items:center;gap:8px;">
-                        <input id="headerSearch" type="text" placeholder="Buscar kayaks, modelos o características..." />
+                        <input id="headerSearch" type="text" placeholder="Buscar cañas, líneas, anzuelos, marcas..." />
                         <button class="search-btn" title="Buscar" type="button"><i class="fas fa-search"></i></button>
                     </div>
 
@@ -65,7 +65,7 @@
     <section class="page-hero">
         <div class="page-hero-content">
             <h1>Catálogo de <span class="text-gradient">PESCA</span></h1>
-            <p>Todo lo que necesitas para tus aventuras de pesca deportiva</p>
+            <p>Mosca, accesorios y equipamiento premium — Tiemco, Soldarini y Sufix</p>
             <a href="../index.html#categories" class="btn btn-primary">
                 <i class="fas fa-arrow-left"></i> Volver a Categorías
             </a>
@@ -88,23 +88,15 @@
                     <div class="filter-group">
                         <div class="filter-option">
                             <input type="checkbox" id="cat-canas" value="cañas" onchange="applyFilters()">
-                            <label for="cat-canas">Cañas de Pescar</label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="cat-reels" value="reels" onchange="applyFilters()">
-                            <label for="cat-reels">Reels</label>
+                            <label for="cat-canas">Cañas de Mosca</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="cat-anzuelos" value="anzuelos" onchange="applyFilters()">
-                            <label for="cat-anzuelos">Anzuelos</label>
+                            <label for="cat-anzuelos">Anzuelos TMC</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="cat-lineas" value="líneas" onchange="applyFilters()">
-                            <label for="cat-lineas">Líneas y Sedales</label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="cat-señuelos" value="señuelos" onchange="applyFilters()">
-                            <label for="cat-señuelos">Señuelos</label>
+                            <label for="cat-lineas">Líneas, Líderes y Tippets</label>
                         </div>
                         <div class="filter-option">
                             <input type="checkbox" id="cat-accesorios" value="accesorios" onchange="applyFilters()">
@@ -118,28 +110,16 @@
                     <h3><i class="fas fa-tag"></i> Marcas</h3>
                     <div class="filter-group">
                         <div class="filter-option">
-                            <input type="checkbox" id="brand-daiwa" value="daiwa" onchange="applyFilters()">
-                            <label for="brand-daiwa">Daiwa</label>
+                            <input type="checkbox" id="brand-tiemco" value="tiemco" onchange="applyFilters()">
+                            <label for="brand-tiemco">Tiemco</label>
                         </div>
                         <div class="filter-option">
-                            <input type="checkbox" id="brand-shimano" value="shimano" onchange="applyFilters()">
-                            <label for="brand-shimano">Shimano</label>
+                            <input type="checkbox" id="brand-soldarini" value="soldarini" onchange="applyFilters()">
+                            <label for="brand-soldarini">Soldarini</label>
                         </div>
                         <div class="filter-option">
-                            <input type="checkbox" id="brand-penn" value="penn" onchange="applyFilters()">
-                            <label for="brand-penn">Penn</label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="brand-abu-garcia" value="abu garcia" onchange="applyFilters()">
-                            <label for="brand-abu-garcia">Abu Garcia</label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="brand-okuma" value="okuma" onchange="applyFilters()">
-                            <label for="brand-okuma">Okuma</label>
-                        </div>
-                        <div class="filter-option">
-                            <input type="checkbox" id="brand-rapala" value="rapala" onchange="applyFilters()">
-                            <label for="brand-rapala">Rapala</label>
+                            <input type="checkbox" id="brand-sufix" value="sufix" onchange="applyFilters()">
+                            <label for="brand-sufix">Sufix</label>
                         </div>
                     </div>
                 </div>
@@ -323,7 +303,10 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+
+    <!-- ✅ PRODUCTOS: edita solo este archivo para agregar/cambiar productos -->
+    <script src="productos-pesca.js"></script>
+
     <script>
         // ============================================
         // TEMA OSCURO / CLARO
@@ -398,32 +381,7 @@
         // ============================================
         // CATÁLOGO DE PRODUCTOS - PESCA
         // ============================================
-        const fishingData = [
-            {id: 1, name: "Caña Shimano Stimula 8'6\" Spinning", brand: "shimano", category: "cañas", price: 75990, condition: "popular", image: "https://images.unsplash.com/photo-1579586337278-3fed436c5c56?w=400", description: "Caña versátil de 2 piezas, ideal para principiantes y pescadores intermedios. Excelente acción y sensibilidad."},
-            {id: 2, name: "Caña Daiwa Aird-X 7'0\" Baitcasting", brand: "daiwa", category: "cañas", price: 89990, condition: "new", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Tecnología HVF para mejor sensibilidad y potencia. Ideal para lanzamiento de precisión."},
-            {id: 3, name: "Caña Penn Battle III 7'0\" Surf", brand: "penn", category: "cañas", price: 112990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Diseñada específicamente para pesca en agua salada desde la orilla. Gran poder y durabilidad."},
-            {id: 4, name: "Caña Abu Garcia Vendetta 6'6\"", brand: "abu garcia", category: "cañas", price: 68990, condition: "sale", image: "https://images.unsplash.com/photo-1599159341517-0b5c2b56e4b9?w=400", description: "Blank de carbono 30-ton, guías de alúmina. Excelente relación calidad-precio."},
-            {id: 5, name: "Reel Shimano Stradic 4000 FL", brand: "shimano", category: "reels", price: 189990, condition: "new", image: "https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=400", description: "Reel de spinning de alta gama con sistema Hagane Body y MicroModule Gear II."},
-            {id: 6, name: "Reel Daiwa BG 5000", brand: "daiwa", category: "reels", price: 149990, condition: "sale", image: "https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=400", description: "Cuerpo de aluminio maquinado, perfecto para pesca en agua salada. Gran capacidad de línea."},
-            {id: 7, name: "Reel Penn Fierce III 6000", brand: "penn", category: "reels", price: 79990, condition: "popular", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Tecnología HT-100, cuerpo sellado. Ideal para pesca costera y en kayak."},
-            {id: 8, name: "Reel Okuma Ceymar C-40", brand: "okuma", category: "reels", price: 45990, condition: "sale", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Excelente reel para principiantes, suave operación y buen rendimiento general."},
-            {id: 9, name: "Set Anzuelos Eagle Claw L417 50pcs", brand: "eagle claw", category: "anzuelos", price: 15990, condition: "popular", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Kit completo de anzuelos L417 en diferentes tamaños. Acero de alta calidad."},
-            {id: 10, name: "Anzuelos Circle Hook Mustad 2/0 25pcs", brand: "mustad", category: "anzuelos", price: 12990, condition: "new", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Anzuelos circulares que reducen daños a los peces. Ideal para pesca con carnada viva."},
-            {id: 11, name: "Anzuelos Tru-Turn 1/0 30pcs", brand: "eagle claw", category: "anzuelos", price: 18990, condition: "popular", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Diseño especial que gira naturalmente en la boca del pez. Mayor tasa de captura."},
-            {id: 12, name: "Línea Trenzada Power Pro 150m 30lb", brand: "power pro", category: "líneas", price: 29990, condition: "sale", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Línea trenzada de alta sensibilidad, cero estiramiento. Color verde musgo."},
-            {id: 13, name: "Sedal Monofilamento Berkley Trilene XL", brand: "berkley", category: "líneas", price: 18990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Excelente manejo, baja memoria. Ideal para spinning y baitcasting."},
-            {id: 14, name: "Línea Fluorocarbon Seaguar Red Label", brand: "seaguar", category: "líneas", price: 24990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Fluorocarbon de alta calidad, prácticamente invisible bajo el agua."},
-            {id: 15, name: "Señuelo Rapala Original Floater F11", brand: "rapala", category: "señuelos", price: 24990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Clásico señuelo flotante con acción de natación realista. Atrae depredadores."},
-            {id: 16, name: "Señuelo Popper Yo-Zuri 15cm", brand: "yo-zuri", category: "señuelos", price: 21990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Señuelo surface que crea ruido y salpicaduras. Ideal para robalos y sierras."},
-            {id: 17, name: "Jig de Pesca Bucktail 1oz 5 Colores", brand: "spro", category: "señuelos", price: 12990, condition: "sale", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Pack de 5 jigs bucktail en diferentes colores. Perfectos para fondo y medias aguas."},
-            {id: 18, name: "Señuelo Crankbait Strike King 4.5cm", brand: "strike king", category: "señuelos", price: 17990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Crankbait de natación profunda con sonajero interno. Excelente para truchas."},
-            {id: 19, name: "Caja de Pesca Plano 3600", brand: "plano", category: "accesorios", price: 19990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Caja organizadora con divisores ajustables. Compacta y resistente."},
-            {id: 20, name: "Red de Pesca Nylon Frabill 6'", brand: "frabill", category: "accesorios", price: 35990, condition: "sale", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Red plegable con mango extendible. Malla knotless para no dañar los peces."},
-            {id: 21, name: "Chaleco de Pesca Fishpond Thunderhead", brand: "fishpond", category: "accesorios", price: 89990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Chaleco técnico con múltiples bolsillos, portaseñuelos y sistema de hidratación."},
-            {id: 22, name: "Pinzas de Pesca Booms 20cm", brand: "booms", category: "accesorios", price: 15990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Pinzas largas de acero inoxidable, corta líneas y extrae anzuelos."},
-            {id: 23, name: "Balanza Digital Rapala 25kg", brand: "rapala", category: "accesorios", price: 28990, condition: "new", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400", description: "Balanza digital precisa hasta 25kg. Incluye gancho y función de tara."},
-            {id: 24, name: "Navaja de Pesca Gerber River Shorty", brand: "gerber", category: "accesorios", price: 42990, condition: "popular", image: "https://images.unsplash.com/photo-1603028275777-2d59fce2d7f1?w=400", description: "Navaja compacta resistente al agua, ideal para filetear y preparar carnadas."}
-        ];
+        // ⚠️ Los productos se cargan desde productos-pesca.js
 
         let currentPage = 1;
         const productsPerPage = 12;

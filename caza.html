@@ -1,707 +1,747 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Catálogo Caza - Aconcagua Deportes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caza y Tiro Deportivo | Aconcagua Deportes</title>
+<meta name="description" content="Catálogo de caza de Aconcagua Deportes: escopetas, rifles, aire comprimido, postones H&N, binoculares, protección auditiva, cajas de seguridad y navajas Victorinox. Consulta por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="caza.css">
+<style>
+.caza-hero{position:relative;background:linear-gradient(rgba(31,53,16,.78),rgba(31,53,16,.86)),url('caza deportiva.jpg') center/cover;color:#fff;padding:64px 0 54px;text-align:center}
+.caza-hero .breadcrumb{font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.85;margin-bottom:14px}
+.caza-hero .breadcrumb a{color:var(--accent-gold);text-decoration:none}
+.caza-hero h1{font-size:clamp(30px,5vw,50px);margin-bottom:12px}
+.caza-hero h1 span{color:var(--accent-gold)}
+.caza-hero p{max-width:720px;margin:0 auto;opacity:.95;font-size:16px}
 
-    <!-- Fuentes & Iconos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+.cat-page:nth-of-type(even){background:var(--bg-light)}
+.cat-page-head{text-align:center;margin-bottom:28px}
+.cat-page-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--secondary-terra);margin-bottom:8px}
+.cat-page-title{font-size:clamp(22px,3.5vw,30px);color:var(--primary-green-dark)}
+html.dark-mode .cat-page-title{color:var(--text-dark)}
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+/* imagen centrada */
+.cat-image{margin:0 auto 36px;max-width:960px;text-align:center;background:var(--bg-white);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:0 14px 40px rgba(45,80,22,.12)}
+.cat-image img{width:100%;height:auto;border-radius:8px;display:block}
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="../style.css"/>
-    <link rel="stylesheet" href="caza.css"/>
+/* explicaciones */
+.exp-wrap{max-width:960px;margin:0 auto}
+.exp-heading{display:flex;align-items:center;gap:10px;font-size:20px;color:var(--primary-green-dark);margin-bottom:22px;padding-bottom:12px;border-bottom:2px solid var(--accent-gold)}
+html.dark-mode .exp-heading{color:var(--text-dark)}
+.exp-heading i{color:var(--accent-gold)}
+.exp-group{margin-bottom:30px}
+.exp-group-title{font-size:16px;text-transform:uppercase;letter-spacing:1px;color:var(--secondary-terra);margin-bottom:14px}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.exp-item{display:flex;align-items:flex-start;gap:18px;background:var(--bg-white);border:1px solid var(--border);border-left:4px solid var(--primary-green);border-radius:10px;padding:16px 18px;transition:box-shadow .2s,transform .2s}
+.exp-item:hover{box-shadow:0 10px 26px rgba(45,80,22,.12);transform:translateX(3px)}
+.exp-text{flex:1}
+.exp-name{display:block;font-weight:700;font-size:15.5px;color:var(--primary-green-dark);margin-bottom:5px}
+html.dark-mode .exp-name{color:var(--text-dark)}
+.exp-desc{font-size:14px;color:var(--text-light);line-height:1.6;margin:0}
+.exp-wa{flex:none;align-self:center;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;white-space:nowrap;transition:background .2s}
+.exp-wa:hover{background:#1da851}
+
+.caza-cta{background:linear-gradient(135deg,var(--primary-green-dark),var(--secondary-terra-dark));color:#fff;text-align:center;padding:58px 20px}
+.caza-cta h2{font-size:27px;margin-bottom:12px}
+.caza-cta p{opacity:.9;max-width:620px;margin:0 auto 24px}
+.caza-cta .btn{background:var(--accent-gold);color:var(--primary-green-dark);font-weight:800;padding:14px 30px;border-radius:8px;text-decoration:none;display:inline-flex;gap:10px;align-items:center}
+
+@media(max-width:640px){
+  .exp-item{flex-direction:column;align-items:stretch;gap:12px}
+  .exp-wa{align-self:flex-start}
+  .cat-image{padding:8px}
+}
+</style>
 </head>
 <body>
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20consultar%20sobre%20productos%20de%20caza" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20consultar%20productos%20de%20caza" class="whatsapp-float" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<div class="utility-bar">
+  <div class="container utility-bar-content">
+    <ul class="utility-locations">
+      <li><a href="https://www.google.com/maps?q=Edificio+Prat+740,+San+Felipe,+Chile" target="_blank"><i class="fas fa-map-marker-alt"></i> Edificio Prat #740, local 22 · San Felipe</a></li>
+      <li><a href="tel:+56941446141"><i class="fas fa-phone"></i> +56 9 4144 6141</a></li>
+    </ul>
+    <form class="utility-search" id="utilitySearchForm" role="search">
+      <input type="text" id="utilitySearchInput" placeholder="Buscar: rifle, escopeta, postón..." aria-label="Buscar">
+      <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<header class="main-header" id="mainHeader">
+  <div class="container main-header-content">
+    <a href="index.html" class="logo-container">
+      <div class="logo-text">
+        <div class="logo-main">ACONCAGUA DEPORTES</div>
+        <div class="logo-sub">AVENTURA & NATURALEZA</div>
+      </div>
     </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="caza.html" class="nav-link active">Caza</a>
+      <a href="pesca.html" class="nav-link">Pesca</a>
+      <a href="kayak.html" class="nav-link">Kayaks</a>
+      <a href="camping.html" class="nav-link">Camping</a>
+      <a href="index.html#about" class="nav-link">Nosotros</a>
+      <a href="index.html#contact" class="nav-link">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" title="Modo oscuro"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" title="Menú"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
 
-    <!-- Main Header (igual al index) -->
-    <header class="main-header" id="mainHeader">
-        <div class="container main-header-content">
-            <a href="../index.html" class="logo-container">
-                <div class="logo-text">
-                    <div class="logo-main">ACONCAGUA DEPORTES</div>
-                    <div class="logo-sub">AVENTURA & NATURALEZA</div>
-                </div>
-            </a>
+<nav class="category-bar" id="categoryBar">
+  <div class="container category-bar-content">
+    <button class="cat-toggle" id="catToggle"><i class="fas fa-bars"></i> Categorías</button>
+    <ul class="category-menu" id="categoryMenu">
+      <li class="cat-item"><a href="caza.html"><i class="fas fa-bullseye"></i> Caza y Tiro</a></li>
+      <li class="cat-item"><a href="pesca.html"><i class="fas fa-fish"></i> Pesca</a></li>
+      <li class="cat-item"><a href="kayak.html"><i class="fas fa-ship"></i> Kayaks</a></li>
+      <li class="cat-item"><a href="camping.html"><i class="fas fa-campground"></i> Camping</a></li>
+      <li class="cat-item"><a href="index.html#about"><i class="fas fa-store"></i> Nosotros</a></li>
+    </ul>
+    <a href="https://wa.me/56941446141" target="_blank" class="cat-offers-link"><i class="fab fa-whatsapp"></i> Cotizar</a>
+  </div>
+</nav>
 
-            <nav class="main-nav" id="mainNav">
-                <a href="../index.html" class="nav-link">Inicio</a>
-                <a href="caza.html" class="nav-link active">Caza</a>
-                <a href="pezca.html" class="nav-link">Pesca</a>
-                <a href="kayak.html" class="nav-link">Kayaks</a>
-                <a href="camping.html" class="nav-link">Camping</a>
-                <a href="../index.html#about" class="nav-link">Nosotros</a>
-                <a href="../index.html#map" class="nav-link">Ubicación</a>
-                <a href="../index.html#contact" class="nav-link">Contacto</a>
-            </nav>
+<section class="caza-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> / Caza</div>
+    <h1>Caza y <span>Tiro Deportivo</span></h1>
+    <p>Revisa nuestro catálogo de caza. Bajo cada imagen encontrarás el detalle de cada producto y un botón para consultar directo por WhatsApp.</p>
+  </div>
+</section>
 
-            <div class="header-actions">
-                <div class="header-search" style="display:flex;align-items:center;gap:8px;">
-                    <input id="headerSearch" type="text" placeholder="Buscar productos..." />
-                    <button class="search-btn" title="Buscar" type="button"><i class="fas fa-search"></i></button>
-                </div>
-
-                
-                <button class="theme-toggle" id="themeToggle" title="Modo oscuro"><i class="fas fa-moon"></i></button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" title="Menú"><i class="fas fa-bars"></i></button>
+    <section class="cat-page section-padding" id="pagina-1">
+      <div class="container">
+        <div class="cat-page-head" data-aos="fade-up">
+          <span class="cat-page-tag">Catálogo · Lámina 1</span>
+          <h2 class="cat-page-title">Cajas de seguridad, protección auditiva, binoculares, escopetas y pistolas</h2>
+        </div>
+        <figure class="cat-image" data-aos="zoom-in">
+          <img src="catalogo-caza-pagina-1.png" alt="Catálogo de caza Aconcagua Deportes - lámina 1: Cajas de seguridad, protección auditiva, binoculares, escopetas y pistolas" loading="lazy">
+        </figure>
+        <div class="exp-wrap">
+          <h3 class="exp-heading"><i class="fas fa-list-ul"></i> Detalle de cada producto de la imagen</h3>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Cajas de seguridad y estuches</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Caja de seguridad ZIIP PB10 / PB20</span>
+              <p class="exp-desc">Cajas fuertes para pistolas fabricadas en acero, con cerradura electrónica con LED y kit para anclarlas al piso. La PB10 es más compacta y la PB20 ofrece mayor espacio interior.</p>
             </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Caja%20de%20seguridad%20ZIIP%20PB10%20/%20PB20.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Caja Pistola TEC</span>
+              <p class="exp-desc">Caja para pistola en polipropileno rígido con interior acolchado en esponja. Liviana y protectora, ideal para guardar o transportar el arma corta.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Caja%20Pistola%20TEC.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Cajas de seguridad escopetas ZIIP G1300K5 / G1450K8</span>
+              <p class="exp-desc">Cajas fuertes verticales en acero para escopetas y rifles largos, con capacidad para hasta 5 armas. La G1450K8 es de mayor tamaño y peso.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Cajas%20de%20seguridad%20escopetas%20ZIIP%20G1300K5%20/%20G1450K8.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Estuches Flambeau 6470 SE / 6464FS</span>
+              <p class="exp-desc">Maletas rígidas para transportar escopetas, con interior acolchado en esponja y cuatro seguros. Disponibles en negro y coyote.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Estuches%20Flambeau%206470%20SE%20/%206464FS.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
         </div>
-    </header>
-
-    <!-- Page Hero (estilo similar al index pero específico) -->
-    <section class="page-hero">
-        <div class="container page-hero-content">
-            <h1>Catálogo de <span class="text-gradient">CAZA</span></h1>
-            <p>Encuentra todo lo que necesitas para tus aventuras de caza</p>
-            <a href="../index.html#categories" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Volver</a>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Protectores de oídos</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Protector Beretta E2</span>
+              <p class="exp-desc">Protector tipo tapón de silicona de alta gama, NRR 32, con almohadillas Comfort Gel, cordón desmontable y diadema flexible. Incluye estuche de microfibra.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Protector%20Beretta%20E2.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion 40970</span>
+              <p class="exp-desc">Orejera pasiva NRR 27, regulable en altura, de diseño compacto y plegable para fácil guardado.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%2040970.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion 40971</span>
+              <p class="exp-desc">Orejera NRR 22 con diadema ajustable y cojines acolchados para mayor comodidad.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%2040971.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion Electrónico 40974</span>
+              <p class="exp-desc">Orejera electrónica NRR 25 que amplifica los sonidos del ambiente y corta el ruido peligroso para una protección auditiva mejorada.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%20Electr%C3%B3nico%2040974.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion 41000 / 41004</span>
+              <p class="exp-desc">Orejera pasiva NRR 24 especialmente desarrollada para cacería y polígono. Cómoda, con diadema ajustable.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%2041000%20/%2041004.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Shilba SH-023DB</span>
+              <p class="exp-desc">Orejera NRR 23 desarrollada para caza y polígono, plegable y de diadema ajustable. Disponible en verde, azul y negro.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Shilba%20SH-023DB.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
         </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Binoculares COMET</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">COMET 201-081640</span>
+              <p class="exp-desc">Binocular con zoom de 8 a 16 aumentos y objetivo de 40 mm, prisma Porro, goma verde. Versátil para distintas distancias.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20COMET%20201-081640.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">COMET 201-102450</span>
+              <p class="exp-desc">Binocular con zoom de 16 a 24 aumentos y objetivo de 50 mm para observación a larga distancia.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20COMET%20201-102450.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">COMET P01-0840</span>
+              <p class="exp-desc">Binocular 8x40 de aumento fijo, brillante y fácil de enfocar. Goma negra, prisma Porro.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20COMET%20P01-0840.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">COMET P01B-1050</span>
+              <p class="exp-desc">Binocular 10x50 con 88 m de visión a 1 km, buen equilibrio entre aumento y luminosidad.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20COMET%20P01B-1050.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">COMET P11-1250</span>
+              <p class="exp-desc">Binocular 12x50 de alto aumento para observar detalles a distancia.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20COMET%20P11-1250.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Escopetas de repetición (Pump Action)</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Maverick 88 (Field / Combo / Security)</span>
+              <p class="exp-desc">Escopetas pump action calibre 12, robustas y confiables. Field con cañón de 710 mm, Combo con dos cañones intercambiables y Security con cañón corto de 508 mm y mayor capacidad.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Maverick%2088%20%28Field%20/%20Combo%20/%20Security%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Mossberg 590 Field 50674</span>
+              <p class="exp-desc">Escopeta pump action calibre 12 de gama superior, culata M-Lok en resina negra, cañones empavonados mate y capacidad 8+1 tiros.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Mossberg%20590%20Field%2050674.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Mossberg 500 Field 50120</span>
+              <p class="exp-desc">Escopeta pump action calibre 12 con culata y guardamanos de madera de nogal, cañón de banda ventilada y capacidad 5+1 tiros.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Mossberg%20500%20Field%2050120.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Pistolas Beretta APX</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Beretta APX A1 / Centurion / A1 Compact / A1 Carry</span>
+              <p class="exp-desc">Familia de pistolas striker calibre 9×19, de distintos tamaños: desde la A1 de servicio (17+1) hasta la Carry para porte oculto (13+1). Incluye cargadores de repuesto.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Beretta%20APX%20A1%20/%20Centurion%20/%20A1%20Compact%20/%20A1%20Carry.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Pistolas Beretta PX4 Storm</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Beretta PX4 Storm Type F / Compact / Inox</span>
+              <p class="exp-desc">Pistolas de acción doble/simple calibre 9×19 (también en .40 S&amp;W) con grips de agarre intercambiables, desarme sin herramientas y seguro que bloquea el percutor del martillo.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Beretta%20PX4%20Storm%20Type%20F%20/%20Compact%20/%20Inox.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Main Container -->
-    <div class="container section-padding">
-        <button class="mobile-filter-toggle" onclick="toggleFilters()"><i class="fas fa-filter"></i> Filtros</button>
-
-        <div class="catalog-layout">
-            <!-- Sidebar Filters (reutilizado) -->
-            <aside class="sidebar" id="sidebar">
-                <!-- Categorías -->
-                <div class="filter-section">
-                    <h3><i class="fas fa-list"></i> Categorías</h3>
-                    <div class="filter-group">
-                        <div class="filter-option"><input type="checkbox" id="cat-rifles" value="rifles" onchange="applyFilters()"><label for="cat-rifles">Rifles de Aire</label></div>
-                        <div class="filter-option"><input type="checkbox" id="cat-pistolas" value="pistolas" onchange="applyFilters()"><label for="cat-pistolas">Pistolas</label></div>
-                        <div class="filter-option"><input type="checkbox" id="cat-miras" value="miras" onchange="applyFilters()"><label for="cat-miras">Miras y Ópticas</label></div>
-                        <div class="filter-option"><input type="checkbox" id="cat-balines" value="balines" onchange="applyFilters()"><label for="cat-balines">Balines y Municiones</label></div>
-                        <div class="filter-option"><input type="checkbox" id="cat-accesorios" value="accesorios" onchange="applyFilters()"><label for="cat-accesorios">Accesorios</label></div>
-                        <div class="filter-option"><input type="checkbox" id="cat-seguridad" value="seguridad" onchange="applyFilters()"><label for="cat-seguridad">Equipo de Seguridad</label></div>
-                    </div>
-                </div>
-
-                <!-- Marcas -->
-                <div class="filter-section">
-                    <h3><i class="fas fa-tag"></i> Marcas</h3>
-                    <div class="filter-group">
-                        <div class="filter-option"><input type="checkbox" id="brand-gamo" value="gamo" onchange="applyFilters()"><label for="brand-gamo">Gamo</label></div>
-                        <div class="filter-option"><input type="checkbox" id="brand-daisy" value="daisy" onchange="applyFilters()"><label for="brand-daisy">Daisy</label></div>
-                        <div class="filter-option"><input type="checkbox" id="brand-umarex" value="umarex" onchange="applyFilters()"><label for="brand-umarex">Umarex</label></div>
-                        <div class="filter-option"><input type="checkbox" id="brand-beeman" value="beeman" onchange="applyFilters()"><label for="brand-beeman">Beeman</label></div>
-                        <div class="filter-option"><input type="checkbox" id="brand-browning" value="browning" onchange="applyFilters()"><label for="brand-browning">Browning</label></div>
-                        <div class="filter-option"><input type="checkbox" id="brand-k25" value="k25" onchange="applyFilters()"><label for="brand-k25">K25</label></div>
-                        <div class="filter-option"><input type="checkbox" id="brand-diana" value="diana" onchange="applyFilters()"><label for="brand-diana">DIANA</label></div>
-                    </div>
-                </div>
-
-                <!-- Precio -->
-                <div class="filter-section">
-                    <h3><i class="fas fa-dollar-sign"></i> Precio</h3>
-                    <div class="price-range">
-                        <div class="price-inputs">
-                            <input type="number" id="minPrice" placeholder="Mín" min="0" max="250000">
-                            <input type="number" id="maxPrice" placeholder="Máx" min="0" max="250000">
-                        </div>
-                        <div class="price-slider-container">
-                            <div class="price-slider-track"></div>
-                            <div class="price-slider-fill" id="priceSliderFill"></div>
-                            <input type="range" min="0" max="250000" value="0" class="price-slider" id="minSlider">
-                            <input type="range" min="0" max="250000" value="250000" class="price-slider" id="maxSlider">
-                        </div>
-                        <div class="price-presets">
-                            <div class="price-preset" data-min="0" data-max="50000">Menos de $50.000</div>
-                            <div class="price-preset" data-min="50000" data-max="100000">$50.000 - $100.000</div>
-                            <div class="price-preset" data-min="100000" data-max="150000">$100.000 - $150.000</div>
-                            <div class="price-preset" data-min="150000" data-max="250000">$150.000 - $250.000</div>
-                        </div>
-                        <div class="price-display">Rango: <span id="selectedMinPrice">0</span> - <span id="selectedMaxPrice">250.000</span> CLP</div>
-                        <button class="apply-filters-btn" onclick="applyFilters()"><i class="fas fa-check"></i> Aplicar</button>
-                        <button class="clear-filters-btn" onclick="clearFilters()"><i class="fas fa-times"></i> Limpiar</button>
-                    </div>
-                </div>
-
-                <!-- Condición -->
-                <div class="filter-section">
-                    <h3><i class="fas fa-star"></i> Condición</h3>
-                    <div class="filter-group">
-                        <div class="filter-option"><input type="checkbox" id="cond-new" value="new" onchange="applyFilters()"><label for="cond-new">Nuevo</label></div>
-                        <div class="filter-option"><input type="checkbox" id="cond-sale" value="sale" onchange="applyFilters()"><label for="cond-sale">En Oferta</label></div>
-                        <div class="filter-option"><input type="checkbox" id="cond-popular" value="popular" onchange="applyFilters()"><label for="cond-popular">Más Popular</label></div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Main Content -->
-            <main>
-                <div class="catalog-header">
-                    <div class="results-info">Mostrando <strong id="resultCount">0</strong> productos</div>
-                    <div class="sort-options">
-                        <label>Ordenar por:</label>
-                        <select id="sortSelect" onchange="sortProducts()">
-                            <option value="relevance">Relevancia</option>
-                            <option value="price-low">Precio: Menor a Mayor</option>
-                            <option value="price-high">Precio: Mayor a Menor</option>
-                            <option value="name-az">Nombre: A-Z</option>
-                            <option value="name-za">Nombre: Z-A</option>
-                            <option value="newest">Más Recientes</option>
-                        </select>
-                    </div>
-                    <div class="view-toggle">
-                        <button class="view-btn active" onclick="setView('grid')"><i class="fas fa-th"></i></button>
-                        <button class="view-btn" onclick="setView('list')"><i class="fas fa-list"></i></button>
-                    </div>
-                </div>
-
-                <div class="active-filters" id="activeFilters"></div>
-
-                <div class="products-grid" id="productsGrid"></div>
-
-                <div class="empty-state" id="emptyState" style="display:none;">
-                    <i class="fas fa-search"></i>
-                    <h3>No se encontraron productos</h3>
-                    <p>Intenta ajustar los filtros</p>
-                </div>
-
-                <div class="pagination" id="pagination"></div>
-            </main>
+    <section class="cat-page section-padding" id="pagina-2">
+      <div class="container">
+        <div class="cat-page-head" data-aos="fade-up">
+          <span class="cat-page-tag">Catálogo · Lámina 2</span>
+          <h2 class="cat-page-title">Escopetas, rifles Savage, equipos de aire comprimido y rifles CO2</h2>
         </div>
-    </div>
-
-    <!-- Footer (igual al index) -->
-    <footer class="footer" id="contact">
-        <div class="container section-padding">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <div class="logo-main">ACONCAGUA DEPORTES</div>
-                        <div class="logo-sub">AVENTURA &amp; NATURALEZA</div>
-                    </div>
-                    <p class="footer-description">Especialistas en equipamiento premium para caza, pesca y deportes al aire libre.</p>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">CATÁLOGOS</h3>
-                    <ul class="footer-links">
-                        <li><a href="caza.html"><i class="fas fa-chevron-right"></i> Caza y Tiro Deportivo</a></li>
-                        <li><a href="pezca.html"><i class="fas fa-chevron-right"></i> Pesca Deportiva</a></li>
-                        <li><a href="kayak.html"><i class="fas fa-chevron-right"></i> Kayaks DUKHA</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">ENLACES RÁPIDOS</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
-                        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
-                        <li><a href="index.html#map"><i class="fas fa-chevron-right"></i> Ubicación</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3 class="footer-title">CONTACTO</h3>
-                    <ul class="contact-info-footer">
-                        <li><i class="fas fa-map-marker-alt"></i>🏢Edificio Prat #740, local 22, San Felipe.</li>
-                        <li><i class="fas fa-phone"></i> +56 9 4144 6141</li>
-                        <li><i class="fas fa-envelope"></i> contacto@aconcaguadeportes.cl</li>
-                    </ul>
-                </div>
+        <figure class="cat-image" data-aos="zoom-in">
+          <img src="catalogo-caza-pagina-2.png" alt="Catálogo de caza Aconcagua Deportes - lámina 2: Escopetas, rifles Savage, equipos de aire comprimido y rifles CO2" loading="lazy">
+        </figure>
+        <div class="exp-wrap">
+          <h3 class="exp-heading"><i class="fas fa-list-ul"></i> Detalle de cada producto de la imagen</h3>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Escopetas de repetición (Pump Action)</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Maverick 88 Field 31010</span>
+              <p class="exp-desc">Escopeta pump action cal. 12, cañón de 710 mm con banda ventilada, recámara 76 mm, capacidad 5+1 tiros y culata de resina negra.</p>
             </div>
-
-            <div class="footer-bottom"><p>&copy; 2025 Aconcagua Deportes. Todos los derechos reservados.</p></div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Maverick%2088%20Field%2031010.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Maverick 88 Combo 31014</span>
+              <p class="exp-desc">Versión Combo con dos cañones (710 mm banda ventilada + 470 mm), perfecta para alternar entre caza y defensa. 5+1 tiros.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Maverick%2088%20Combo%2031014.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Maverick 88 Security 31046</span>
+              <p class="exp-desc">Configuración Security con cañón corto de 508 mm y capacidad 7+1 tiros, orientada a defensa.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Maverick%2088%20Security%2031046.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Mossberg 590 Field 50674</span>
+              <p class="exp-desc">Pump action cal. 12, culata M-Lok en resina negra, cañones y báscula empavonados, mira delantera fija y trasera tipo anillo. 8+1 tiros.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Mossberg%20590%20Field%2050674.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Mossberg 500 Field 50120</span>
+              <p class="exp-desc">Pump action cal. 12, culata y guardamanos de madera de nogal, cañones empavonados mate, mira tipo “bead” de bronce. 5+1 tiros.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Mossberg%20500%20Field%2050120.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
         </div>
-    </footer>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Rifles Savage Arms</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Savage Mark II F 26700</span>
+              <p class="exp-desc">Rifle de cerrojo .22 LR con cañón de acero terminación mate, gatillo AccuTrigger ajustable, miras de fibra óptica y culata sintética. Cargador de 10 tiros.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Savage%20Mark%20II%20F%2026700.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Savage Mark II G 20700</span>
+              <p class="exp-desc">Misma plataforma Mark II en .22 LR pero con culata de madera, para el acabado clásico.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Savage%20Mark%20II%20G%2020700.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Savage Mark II Camo 26800</span>
+              <p class="exp-desc">Versión con acabado camuflaje, ideal para caza menor donde se busca disimular el arma.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Savage%20Mark%20II%20Camo%2026800.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Savage 93 F 91800</span>
+              <p class="exp-desc">Rifle de cerrojo en potente calibre .22 Win Mag, cañón terminación mate y gatillo AccuTrigger. Cargador de 5 tiros (no incluye bases para mira).</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Savage%2093%20F%2091800.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Equipos de aire comprimido (PCP)</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Bombín Benjamin HPF2KU</span>
+              <p class="exp-desc">Bomba manual de alta presión de 3 etapas con adaptador universal, para cargar rifles PCP sin compresor.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Bomb%C3%ADn%20Benjamin%20HPF2KU.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Botella de Aire Benjamin 81001</span>
+              <p class="exp-desc">Botella de fibra de carbono de 1,5 lt (2,5 kg), de 7 a 25 cargas a 4.500 psi. Recarga rápida de rifles PCP en terreno.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Botella%20de%20Aire%20Benjamin%2081001.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Bombines TEC SHFNS001 / SHBNS001</span>
+              <p class="exp-desc">Bombines manuales para carga PCP a 4.500 psi / 300 bar, en versiones de 3 y 4 etapas.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Bombines%20TEC%20SHFNS001%20/%20SHBNS001.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Compresores TEC SHCAP001 / SHCAP002</span>
+              <p class="exp-desc">Compresores eléctricos para carga PCP a 4.500 psi: SHCAP001 de 12 V con fuente de poder y SHCAP002 de 220 V.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Compresores%20TEC%20SHCAP001%20/%20SHCAP002.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Rifles CO2</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Rifle CO2 Crosman 1077</span>
+              <p class="exp-desc">Rifle semiautomático de repetición a CO2 calibre 4,5 mm, velocidad 190 m/s, cañón de acero estriado, culata sintética y clip rotativo para 12 postones.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Rifle%20CO2%20Crosman%201077.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Información importante</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Seguridad en las armas de fuego</span>
+              <p class="exp-desc">Esta lámina incluye las reglas básicas de manejo seguro: tratar siempre el arma como si estuviera cargada, mantener el dedo fuera del gatillo hasta disparar, apuntar solo a un objetivo seguro y guardar arma y munición por separado.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Seguridad%20en%20las%20armas%20de%20fuego.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <section class="cat-page section-padding" id="pagina-3">
+      <div class="container">
+        <div class="cat-page-head" data-aos="fade-up">
+          <span class="cat-page-tag">Catálogo · Lámina 3</span>
+          <h2 class="cat-page-title">Postones H&amp;N, navajas Victorinox y protectores auditivos</h2>
+        </div>
+        <figure class="cat-image" data-aos="zoom-in">
+          <img src="catalogo-caza-pagina-3.png" alt="Catálogo de caza Aconcagua Deportes - lámina 3: Postones H&amp;N, navajas Victorinox y protectores auditivos" loading="lazy">
+        </figure>
+        <div class="exp-wrap">
+          <h3 class="exp-heading"><i class="fas fa-list-ul"></i> Detalle de cada producto de la imagen</h3>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Postones / Balines H&amp;N Sport</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Baracuda Power</span>
+              <p class="exp-desc">Postón pesado de punta cacería cobrizada (5,5 mm · 21,14 gr), gran energía de impacto para caza menor.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Baracuda%20Power.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Baracuda Hunter</span>
+              <p class="exp-desc">Punta hueca Hollow Point (5,5 mm · 18,14 gr) que aumenta la expansión, ideal para cacería.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Baracuda%20Hunter.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Baracuda Hunter EX</span>
+              <p class="exp-desc">Versión extendida Hollow Point en calibres 4,5 / 5,5 / 6,35 mm y pesos de 9,57 a 28,24 gr, para máxima transferencia de energía.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Baracuda%20Hunter%20EX.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Baracuda FT</span>
+              <p class="exp-desc">Punta cacería en 4,5 mm (9,57 gr), equilibrio entre precisión y poder de detención.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Baracuda%20FT.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Baracuda Match</span>
+              <p class="exp-desc">Postón de competición de alta consistencia, disponible en 4,5 / 5,51 / 5,52 mm.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Baracuda%20Match.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Field Target Trophy</span>
+              <p class="exp-desc">Diseño Domed pensado para disciplina Field Target, máxima precisión a distancia (5,53 / 6,35 mm).</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Field%20Target%20Trophy.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Field Target Trophy Power</span>
+              <p class="exp-desc">Versión de mayor peso del FT Trophy (5,53 mm · 14,66 gr) para rifles de alta potencia.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Field%20Target%20Trophy%20Power.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Silver Point</span>
+              <p class="exp-desc">Punta de cacería puntiaguda para penetración, en 4,5 y 5,5 mm.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Silver%20Point.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Hornet</span>
+              <p class="exp-desc">Postón de punta cacería bronceada (5,5 mm · 16,20 gr), buena relación precisión/impacto.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Hornet.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Rabbit Magnum Power</span>
+              <p class="exp-desc">Postón potente de punta cacería cobrizada (5,5 mm · 25,77 gr), pensado para presas como conejos.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Rabbit%20Magnum%20Power.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Slug HP / HP II</span>
+              <p class="exp-desc">Proyectiles tipo Slug Hollow Point de alto rendimiento balístico (5,51 mm, 21–30 gr) para rifles PCP de precisión.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Slug%20HP%20/%20HP%20II.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">H&amp;N Excite (Plinking / Spike / Hammer)</span>
+              <p class="exp-desc">Línea económica para práctica frecuente: Plinking de punta plana, Spike de punta aguda y Hammer tipo Domed.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20H%26N%20Excite%20%28Plinking%20/%20Spike%20/%20Hammer%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Navajas Victorinox Swiss Army 91 mm</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Spartan (1.3603)</span>
+              <p class="exp-desc">El clásico multiusos de 12 funciones, color rojo. La navaja suiza por excelencia.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Spartan%20%281.3603%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Spartan Black (1.3603.3)</span>
+              <p class="exp-desc">Misma Spartan de 12 funciones en color negro.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Spartan%20Black%20%281.3603.3%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Spartan Camo (1.3603.94)</span>
+              <p class="exp-desc">Spartan de 12 funciones con cachas en camuflaje, ideal para cacería.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Spartan%20Camo%20%281.3603.94%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Camper (1.3613)</span>
+              <p class="exp-desc">13 funciones con serrucho para madera, pensada para acampar. Color rojo.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Camper%20%281.3613%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Camper Camping (1.3613.71)</span>
+              <p class="exp-desc">Edición Camper con logo de camping, 13 funciones, color rojo.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Camper%20Camping%20%281.3613.71%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Angler (1.3653.72)</span>
+              <p class="exp-desc">18 funciones orientadas a la pesca, incluye herramientas útiles en el agua. Color rojo.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Angler%20%281.3653.72%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Climber (1.3703)</span>
+              <p class="exp-desc">14 funciones, una de las más completas de uso diario. Color rojo.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Climber%20%281.3703%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Climber Black (1.3703.3)</span>
+              <p class="exp-desc">Climber de 14 funciones en color negro.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Climber%20Black%20%281.3703.3%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Huntsman (1.3713)</span>
+              <p class="exp-desc">15 funciones incluyendo tijeras y serrucho, favorita para cacería y excursión. Color rojo.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Huntsman%20%281.3713%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Victorinox Huntsman Camo (1.3713.941)</span>
+              <p class="exp-desc">Huntsman de 15 funciones con cachas camufladas. Todas son de acero inoxidable, garantía de por vida y hechas en Suiza.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Victorinox%20Huntsman%20Camo%20%281.3713.941%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        <div class="exp-group">
+          <h3 class="exp-group-title">Protectores auditivos</h3>
+          <ul class="exp-list">
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Beretta E2</span>
+              <p class="exp-desc">Protector tipo tapón de silicona NRR 32, cordón desmontable y ajustable. Incluye estuche de microfibra. Azul, negro, naranja o fucsia.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Beretta%20E2.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion 40970</span>
+              <p class="exp-desc">Orejera pasiva NRR 27, regulable en altura, diseño para cazadores y tiradores.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%2040970.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion 40971</span>
+              <p class="exp-desc">Orejera NRR 21 de diseño delgado, regulable y plegable.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%2040971.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion Electrónico 40974</span>
+              <p class="exp-desc">Orejera electrónica NRR 25 que amplifica los sonidos suaves y bloquea los peligrosos. Regulable y plegable.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%20Electr%C3%B3nico%2040974.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Champion 41000 / 41004</span>
+              <p class="exp-desc">Orejera pasiva NRR 24, regulable y plegable. Colores gris y negro.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Champion%2041000%20/%2041004.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Health (tapones)</span>
+              <p class="exp-desc">Tapones reutilizables de silicona suave NRR 6, no bloquean conversaciones normales. Envase de 12 unidades.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Health%20%28tapones%29.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          <li class="exp-item">
+            <div class="exp-text">
+              <span class="exp-name">Shilba SH-023DB</span>
+              <p class="exp-desc">Orejera NRR 23 que atenúa ruidos peligrosos sin bloquear voces humanas, vincha acolchada. Verde, azul y negro.</p>
+            </div>
+            <a class="exp-wa" href="https://wa.me/56941446141?text=Hola%2C%20me%20interesa%20el%20producto%3A%20Shilba%20SH-023DB.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%2C%20stock%20y%20precio%3F" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        // Tema oscuro / claro
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlElement.classList.add('dark-mode');
-        }
-        function updateThemeIcon() {
-            const icon = themeToggle.querySelector('i');
-            if (htmlElement.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); themeToggle.title = 'Modo claro';
-            } else {
-                icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); themeToggle.title = 'Modo oscuro';
-            }
-        }
-        if (themeToggle) {
-            updateThemeIcon();
-            themeToggle.addEventListener('click', () => {
-                htmlElement.classList.toggle('dark-mode');
-                localStorage.setItem('theme', htmlElement.classList.contains('dark-mode') ? 'dark' : 'light');
-                updateThemeIcon();
-            });
-        }
+<section class="caza-cta">
+  <h2>¿Te interesó algún producto?</h2>
+  <p>Escríbenos por WhatsApp indicando el modelo y te confirmamos stock, precio y formas de pago. También hacemos envíos a todo Chile.</p>
+  <a class="btn" href="https://wa.me/56941446141?text=Hola,%20necesito%20asesor%C3%ADa%20sobre%20productos%20de%20caza" target="_blank"><i class="fab fa-whatsapp"></i> Hablar con un asesor</a>
+</section>
 
-        // Header scroll
-        const header = document.getElementById('mainHeader');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) header.classList.add('scrolled'); else header.classList.remove('scrolled');
-        });
+<footer class="footer" id="contact">
+  <div class="container section-padding">
+    <div class="footer-content">
+      <div class="footer-column">
+        <div class="footer-logo">
+          <div class="logo-main">ACONCAGUA DEPORTES</div>
+          <div class="logo-sub">AVENTURA & NATURALEZA</div>
+        </div>
+        <p class="footer-description">Especialistas en equipamiento premium para caza, pesca y deportes al aire libre en el Valle de Aconcagua.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/56941446141" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">CATÁLOGOS</h3>
+        <ul class="footer-links">
+          <li><a href="caza.html"><i class="fas fa-chevron-right"></i> Caza y Tiro</a></li>
+          <li><a href="pesca.html"><i class="fas fa-chevron-right"></i> Pesca</a></li>
+          <li><a href="kayak.html"><i class="fas fa-chevron-right"></i> Kayaks</a></li>
+          <li><a href="camping.html"><i class="fas fa-chevron-right"></i> Camping</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title">CONTACTO</h3>
+        <ul class="contact-info-footer">
+          <li><i class="fas fa-map-marker-alt"></i> <span>Edificio Prat #740, local 22, San Felipe.</span></li>
+          <li><i class="fas fa-phone"></i> <span>+56 9 4144 6141</span></li>
+          <li><i class="fas fa-clock"></i> <span>Lun-Vie: 9:00-19:00<br>Sáb: 10:00-14:00</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Aconcagua Deportes. Todos los derechos reservados. | La venta de armas y municiones está sujeta a la normativa vigente y a la acreditación correspondiente.</p>
+    </div>
+  </div>
+</footer>
 
-        // Menú móvil
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mainNav.classList.toggle('active');
-                mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            });
-        }
-        document.addEventListener('click', (e) => {
-            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mainNav.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-
-        // Búsqueda rápida en header
-        const headerSearch = document.getElementById('headerSearch');
-        const searchBtn = document.querySelector('.search-btn');
-        if (searchBtn) {
-            searchBtn.addEventListener('click', () => {
-                applyFilters();
-            });
-        }
-        if (headerSearch) {
-            headerSearch.addEventListener('keypress', (e) => { if (e.key === 'Enter') applyFilters(); });
-        }
-
-        // Inicializar AOS
-        AOS.init({ offset: 100, once: true, duration: 800 });
-
-        // -------------------------------------------------
-        // Catálogo (usa los datos y funciones ya presentes)
-        // -------------------------------------------------
-        // Datos de productos de caza
-        const huntingData = [
-            // Rifles de Aire
-            {id: 1, name: "Rifle Gamo Shadow 1000", brand: "gamo", category: "rifles", price: 129990, condition: "sale", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Rifle de aire comprimido de alta potencia con cañón de acero."},
-            {id: 2, name: "Rifle Diana 350 Magnum", brand: "diana", category: "rifles", price: 189990, condition: "new", image: "https://images.unsplash.com/photo-1595599512946-4c0d0b0c0239?w=400", description: "Rifle de resorte de alta potencia ideal para caza mayor."},
-            {id: 3, name: "Rifle Beeman R9", brand: "beeman", category: "rifles", price: 219990, condition: "popular", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Rifle de alta precisión con mecanismo de resorte avanzado."},
-            {id: 4, name: "Rifle Browning Leverage", brand: "browning", category: "rifles", price: 159990, condition: "new", image: "https://images.unsplash.com/photo-1595599512946-4c0d0b0c0239?w=400", description: "Rifle de palanca con diseño ergonómico y gran precisión."},
-            
-            // Pistolas
-            {id: 5, name: "Pistola Umarex Beretta PX4", brand: "umarex", category: "pistolas", price: 89990, condition: "popular", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Pistola CO2 con diseño realista y sistema de blowback."},
-            {id: 6, name: "Pistola Gamo PT-85", brand: "gamo", category: "pistolas", price: 75990, condition: "sale", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Pistola de aire comprimido con cargador de 16 balines."},
-            {id: 7, name: "Pistola Daisy Powerline 340", brand: "daisy", category: "pistolas", price: 45990, condition: "new", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Pistola de resorte ideal para práctica de tiro."},
-            
-            // Miras y Ópticas
-            {id: 8, name: "Mira Telescópica K25 4x32", brand: "k25", category: "miras", price: 29990, condition: "popular", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Mira telescópica con lentes multi-revestidas para mejor visión."},
-            {id: 9, name: "Mira Gamo 4x32", brand: "gamo", category: "miras", price: 34990, condition: "new", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Mira de alta calidad con ajuste fino de elevación y viento."},
-            {id: 10, name: "Mira Red Dot SAGA RD30", brand: "saga", category: "miras", price: 24990, condition: "sale", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Mira de punto rojo con 4 retículas diferentes."},
-            
-            // Balines y Municiones
-            {id: 11, name: "Balines Gamo Hunter 500uds", brand: "gamo", category: "balines", price: 8990, condition: "popular", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Balines de plomo de alta densidad para máxima penetración."},
-            {id: 12, name: "Balines Daisy Precision Max 1000uds", brand: "daisy", category: "balines", price: 6990, condition: "new", image: "https://images.unsplash.com-1595599513121-3f0a8938f8e9?w=400", description: "Balines de precisión para competición y práctica."},
-            {id: 13, name: "CO2 Umarex 12g 10 Cartuchos", brand: "umarex", category: "balines", price: 12990, condition: "sale", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Cartuchos de CO2 de 12g para pistolas y rifles."},
-            
-            // Accesorios
-            {id: 14, name: "Soporte Rifle SAGA Bipod", brand: "saga", category: "accesorios", price: 19990, condition: "new", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Bipod ajustable para mayor estabilidad en disparos."},
-            {id: 15, name: "Cargador Rápido Beeman", brand: "beeman", category: "accesorios", price: 8990, condition: "popular", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Cargador rápido para balines de diferentes calibres."},
-            {id: 16, name: "Estuche RAPALA para Rifle", brand: "rapala", category: "accesorios", price: 29990, condition: "sale", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Estuche rígido con espuma moldeable para protección."},
-            
-            // Equipo de Seguridad
-            {id: 17, name: "Gafas de Seguridad DIANA", brand: "diana", category: "seguridad", price: 7990, condition: "new", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Gafas de protección anti-impacto con protección UV."},
-            {id: 18, name: "Silenciador Browning", brand: "browning", category: "accesorios", price: 24990, condition: "popular", image: "https://images.unsplash.com/photo-1586796446655-27bd15a3b1b5?w=400", description: "Silenciador para reducir el sonido de disparo."},
-            {id: 19, name: "Blanco de Tiro Daisy", brand: "daisy", category: "accesorios", price: 4990, condition: "sale", image: "https://images.unsplash.com/photo-1595599513121-3f0a8938f8e9?w=400", description: "Blanco de práctica con sistema de auto-avance."},
-            {id: 20, name: "Kit Limpieza Umarex", brand: "umarex", category: "accesorios", price: 12990, condition: "new", image: "https://images.unsplash.com/photo-1544531585-9847b12c3ed1?w=400", description: "Kit completo para limpieza y mantenimiento de armas."}
-        ];
-
-        // Variables globales
-        let currentPage = 1;
-        const productsPerPage = 12;
-        let filteredProducts = [...huntingData];
-        let currentView = 'grid';
-
-        // Inicializar el catálogo
-        function initCatalog() {
-            initPriceSliders();
-            renderProducts();
-            updatePagination();
-            updateResultCount();
-        }
-
-        // Inicializar sliders de precio
-        function initPriceSliders() {
-            const minSlider = document.getElementById('minSlider');
-            const maxSlider = document.getElementById('maxSlider');
-            const minPriceInput = document.getElementById('minPrice');
-            const maxPriceInput = document.getElementById('maxPrice');
-            const priceSliderFill = document.getElementById('priceSliderFill');
-            const selectedMinPrice = document.getElementById('selectedMinPrice');
-            const selectedMaxPrice = document.getElementById('selectedMaxPrice');
-            const pricePresets = document.querySelectorAll('.price-preset');
-
-            // Función para formatear números con separadores de miles
-            function formatNumber(num) {
-                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            }
-
-            // Función para actualizar el slider de rango
-            function updatePriceSlider() {
-                const minValue = parseInt(minSlider.value);
-                const maxValue = parseInt(maxSlider.value);
-                
-                // Asegurar que min no sea mayor que max
-                if (minValue > maxValue) {
-                    minSlider.value = maxValue;
-                    maxSlider.value = minValue;
-                    return updatePriceSlider();
-                }
-                
-                // Actualizar inputs
-                minPriceInput.value = minValue;
-                maxPriceInput.value = maxValue;
-                
-                // Actualizar display
-                selectedMinPrice.textContent = formatNumber(minValue);
-                selectedMaxPrice.textContent = formatNumber(maxValue);
-                
-                // Actualizar el relleno del slider
-                const minPercent = (minValue / parseInt(minSlider.max)) * 100;
-                const maxPercent = (maxValue / parseInt(maxSlider.max)) * 100;
-                priceSliderFill.style.left = `${minPercent}%`;
-                priceSliderFill.style.width = `${maxPercent - minPercent}%`;
-            }
-
-            // Sincronizar sliders con inputs
-            minSlider.addEventListener('input', updatePriceSlider);
-            maxSlider.addEventListener('input', updatePriceSlider);
-            
-            minPriceInput.addEventListener('input', function() {
-                minSlider.value = this.value || 0;
-                updatePriceSlider();
-            });
-            
-            maxPriceInput.addEventListener('input', function() {
-                maxSlider.value = this.value || 250000;
-                updatePriceSlider();
-            });
-
-            // Configurar presets de precio
-            pricePresets.forEach(preset => {
-                preset.addEventListener('click', function() {
-                    // Remover clase active de todos los presets
-                    pricePresets.forEach(p => p.classList.remove('active'));
-                    
-                    // Agregar clase active al preset seleccionado
-                    this.classList.add('active');
-                    
-                    // Establecer valores mínimos y máximos
-                    minSlider.value = this.dataset.min;
-                    maxSlider.value = this.dataset.max;
-                    updatePriceSlider();
-                });
-            });
-
-            // Inicializar display
-            updatePriceSlider();
-        }
-
-        // Renderizar productos
-        function renderProducts() {
-            const productsGrid = document.getElementById('productsGrid');
-            productsGrid.innerHTML = '';
-
-            const startIndex = (currentPage - 1) * productsPerPage;
-            const endIndex = startIndex + productsPerPage;
-            const productsToShow = filteredProducts.slice(startIndex, endIndex);
-
-            if (productsToShow.length === 0) {
-                document.getElementById('emptyState').style.display = 'block';
-                productsGrid.style.display = 'none';
-                return;
-            }
-
-            document.getElementById('emptyState').style.display = 'none';
-            productsGrid.style.display = 'grid';
-
-            productsToShow.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.setAttribute('data-category', product.category);
-                productCard.setAttribute('data-brand', product.brand);
-                productCard.setAttribute('data-price', product.price);
-                productCard.setAttribute('data-condition', product.condition);
-                
-                // Determinar el tipo de badge
-                let badgeClass = '';
-                let badgeText = '';
-                
-                if (product.condition === 'new') {
-                    badgeClass = 'new';
-                    badgeText = 'Nuevo';
-                } else if (product.condition === 'sale') {
-                    badgeClass = 'sale';
-                    badgeText = 'Oferta';
-                } else {
-                    badgeClass = 'popular';
-                    badgeText = 'Popular';
-                }
-
-                productCard.innerHTML = `
-                    <div class="product-image">
-                        <span class="product-badge ${badgeClass}">${badgeText}</span>
-                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=Imagen+No+Disponible'">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">${product.brand.toUpperCase()}</div>
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-price">$${product.price.toLocaleString('es-CL')}</div>
-                        <div class="product-actions">
-                            <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20el%20producto:%20${encodeURIComponent(product.name)}" class="btn-whatsapp" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Consultar
-                            </a>
-                        </div>
-                    </div>
-                `;
-
-                productsGrid.appendChild(productCard);
-            });
-
-            // Aplicar vista actual
-            if (currentView === 'list') {
-                productsGrid.classList.add('list-view');
-            } else {
-                productsGrid.classList.remove('list-view');
-            }
-        }
-
-        // Aplicar filtros
-        function applyFilters() {
-            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked')).map(cb => cb.value);
-            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked')).map(cb => cb.value);
-            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked')).map(cb => cb.value);
-            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
-            const maxPrice = parseInt(document.getElementById('maxPrice').value) || 250000;
-            const searchTerm = document.getElementById('headerSearch').value.toLowerCase();
-
-            filteredProducts = huntingData.filter(product => {
-                // Filtro por categoría
-                if (selectedCategories.length > 0 && !selectedCategories.includes(product.category)) {
-                    return false;
-                }
-
-                // Filtro por marca
-                if (selectedBrands.length > 0 && !selectedBrands.includes(product.brand)) {
-                    return false;
-                }
-
-                // Filtro por condición
-                if (selectedConditions.length > 0 && !selectedConditions.includes(product.condition)) {
-                    return false;
-                }
-
-                // Filtro por precio
-                if (product.price < minPrice || product.price > maxPrice) {
-                    return false;
-                }
-
-                // Filtro por búsqueda
-                if (searchTerm && !product.name.toLowerCase().includes(searchTerm) && 
-                    !product.brand.toLowerCase().includes(searchTerm) && 
-                    !product.description.toLowerCase().includes(searchTerm)) {
-                    return false;
-                }
-
-                return true;
-            });
-
-            currentPage = 1;
-            renderProducts();
-            updatePagination();
-            updateResultCount();
-            updateActiveFilters();
-        }
-
-        // Limpiar filtros
-        function clearFilters() {
-            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            document.getElementById('minPrice').value = '';
-            document.getElementById('maxPrice').value = '';
-            document.getElementById('headerSearch').value = '';
-            
-            // Resetear sliders
-            document.getElementById('minSlider').value = 0;
-            document.getElementById('maxSlider').value = 250000;
-            document.getElementById('priceSliderFill').style.left = '0%';
-            document.getElementById('priceSliderFill').style.width = '100%';
-            
-            // Resetear presets
-            document.querySelectorAll('.price-preset').forEach(p => p.classList.remove('active'));
-            
-            // Actualizar display
-            document.getElementById('selectedMinPrice').textContent = '0';
-            document.getElementById('selectedMaxPrice').textContent = '250.000';
-            
-            applyFilters();
-        }
-
-        // Actualizar contador de resultados
-        function updateResultCount() {
-            document.getElementById('resultCount').textContent = filteredProducts.length;
-        }
-
-        // Actualizar filtros activos
-        function updateActiveFilters() {
-            const container = document.getElementById('activeFilters');
-            container.innerHTML = '';
-            
-            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked'));
-            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked'));
-            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked'));
-            
-            selectedCategories.forEach(filter => {
-                const tag = document.createElement('div');
-                tag.className = 'filter-tag';
-                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
-                container.appendChild(tag);
-            });
-            
-            selectedBrands.forEach(filter => {
-                const tag = document.createElement('div');
-                tag.className = 'filter-tag';
-                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
-                container.appendChild(tag);
-            });
-            
-            selectedConditions.forEach(filter => {
-                const tag = document.createElement('div');
-                tag.className = 'filter-tag';
-                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
-                container.appendChild(tag);
-            });
-        }
-
-        // Eliminar filtro
-        function removeFilter(id) {
-            document.getElementById(id).checked = false;
-            applyFilters();
-        }
-
-        // Ordenar productos
-        function sortProducts() {
-            const sortValue = document.getElementById('sortSelect').value;
-            
-            filteredProducts.sort((a, b) => {
-                switch(sortValue) {
-                    case 'price-low':
-                        return a.price - b.price;
-                    case 'price-high':
-                        return b.price - a.price;
-                    case 'name-az':
-                        return a.name.localeCompare(b.name);
-                    case 'name-za':
-                        return b.name.localeCompare(a.name);
-                    case 'newest':
-                        return b.id - a.id;
-                    default:
-                        return 0;
-                }
-            });
-            
-            currentPage = 1;
-            renderProducts();
-            updatePagination();
-        }
-
-        // Actualizar paginación
-        function updatePagination() {
-            const pagination = document.getElementById('pagination');
-            const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-            
-            if (totalPages <= 1) {
-                pagination.innerHTML = '';
-                return;
-            }
-            
-            let paginationHTML = '';
-            
-            // Botón anterior
-            paginationHTML += `<button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i> Anterior</button>`;
-            
-            // Páginas
-            for (let i = 1; i <= totalPages; i++) {
-                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-                    paginationHTML += `<button class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
-                } else if (i === currentPage - 2 || i === currentPage + 2) {
-                    paginationHTML += `<button class="pagination-btn" disabled>...</button>`;
-                }
-            }
-            
-            // Botón siguiente
-            paginationHTML += `<button class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Siguiente <i class="fas fa-chevron-right"></i></button>`;
-            
-            pagination.innerHTML = paginationHTML;
-        }
-
-        // Cambiar página
-        function changePage(page) {
-            currentPage = page;
-            renderProducts();
-            updatePagination();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Establecer vista (grid o lista)
-        function setView(view) {
-            currentView = view;
-            const grid = document.getElementById('productsGrid');
-            const buttons = document.querySelectorAll('.view-btn');
-            
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-            
-            if (view === 'list') {
-                grid.classList.add('list-view');
-            } else {
-                grid.classList.remove('list-view');
-            }
-        }
-
-        // Buscar productos
-        function searchProducts() {
-            applyFilters();
-        }
-
-        // Alternar filtros en móvil
-        function toggleFilters() {
-            document.getElementById('sidebar').classList.toggle('active');
-        }
-
-        // Inicializar cuando se carga la página
-        document.addEventListener('DOMContentLoaded', function() {
-            initCatalog();
-            
-            // Buscar al presionar Enter
-            document.getElementById('headerSearch').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    searchProducts();
-                }
-            });
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({duration:600,once:true,offset:80});
+  const themeToggle=document.getElementById('themeToggle');const htmlEl=document.documentElement;
+  if(localStorage.getItem('theme')==='dark')htmlEl.classList.add('dark-mode');
+  function icon(){const i=themeToggle.querySelector('i');i.className=htmlEl.classList.contains('dark-mode')?'fas fa-sun':'fas fa-moon';}
+  icon();
+  themeToggle.addEventListener('click',()=>{htmlEl.classList.toggle('dark-mode');localStorage.setItem('theme',htmlEl.classList.contains('dark-mode')?'dark':'light');icon();});
+  const mobileBtn=document.getElementById('mobileMenuBtn');const mainNav=document.getElementById('mainNav');
+  mobileBtn.addEventListener('click',()=>mainNav.classList.toggle('active'));
+  const catToggle=document.getElementById('catToggle');const categoryMenu=document.getElementById('categoryMenu');
+  if(catToggle)catToggle.addEventListener('click',()=>categoryMenu.classList.toggle('open'));
+  const f=document.getElementById('utilitySearchForm');
+  f.addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('utilitySearchInput').value.trim();if(!q)return;window.open('https://wa.me/56941446141?text='+encodeURIComponent('Hola, busco: '+q),'_blank');});
+</script>
 </body>
 </html>

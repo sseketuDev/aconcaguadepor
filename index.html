@@ -59,7 +59,7 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleprueba.css">
     
     <!-- Preload hero image for LCP -->
     <link rel="preload" href="sobrenosotros.jpg" as="image">
@@ -75,6 +75,20 @@
         <div class="container">
             <span>🚚 Envíos a todo Chile — Consulta por WhatsApp</span>
             <button id="closeAnnouncement" class="close-announcement">&times;</button>
+        </div>
+    </div>
+
+    <!-- Utility Bar (estilo Armarket) -->
+    <div class="utility-bar">
+        <div class="container utility-bar-content">
+            <ul class="utility-locations">
+                <li><a href="https://www.google.com/maps?q=Edificio+Prat+740,+San+Felipe,+Chile" target="_blank"><i class="fas fa-map-marker-alt"></i> Edificio Prat #740, local 22 · San Felipe</a></li>
+                <li><a href="tel:+56941446141"><i class="fas fa-phone"></i> +56 9 4144 6141</a></li>
+            </ul>
+            <form class="utility-search" id="utilitySearchForm" role="search">
+                <input type="text" id="utilitySearchInput" placeholder="Buscar productos: rifle, caña, kayak, carpa..." aria-label="Buscar">
+                <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+            </form>
         </div>
     </div>
 
@@ -112,6 +126,55 @@
             </div>
         </div>
     </header>
+
+    <!-- Category Bar (mega-menú estilo Armarket) -->
+    <nav class="category-bar" id="categoryBar">
+        <div class="container category-bar-content">
+            <button class="cat-toggle" id="catToggle"><i class="fas fa-bars"></i> Categorías</button>
+            <ul class="category-menu" id="categoryMenu">
+                <li class="cat-item">
+                    <a href="caza.html"><i class="fas fa-bullseye"></i> Caza y Tiro</a>
+                    <div class="cat-dropdown">
+                        <a href="caza.html">Rifles de aire</a>
+                        <a href="caza.html">Pistolas y revólveres</a>
+                        <a href="caza.html">Miras y ópticas</a>
+                        <a href="caza.html">Municiones / balines</a>
+                        <a href="caza.html">Accesorios de caza</a>
+                    </div>
+                </li>
+                <li class="cat-item">
+                    <a href="pesca.html"><i class="fas fa-fish"></i> Pesca</a>
+                    <div class="cat-dropdown">
+                        <a href="pesca.html">Cañas</a>
+                        <a href="pesca.html">Reels / carretes</a>
+                        <a href="pesca.html">Señuelos</a>
+                        <a href="pesca.html">Líneas y accesorios</a>
+                    </div>
+                </li>
+                <li class="cat-item">
+                    <a href="kayak.html"><i class="fas fa-ship"></i> Kayaks</a>
+                    <div class="cat-dropdown">
+                        <a href="kayak.html">Kayaks DUKHA</a>
+                        <a href="kayak.html">Remos</a>
+                        <a href="kayak.html">Chalecos salvavidas</a>
+                        <a href="kayak.html">Accesorios náuticos</a>
+                    </div>
+                </li>
+                <li class="cat-item">
+                    <a href="camping.html"><i class="fas fa-campground"></i> Camping</a>
+                    <div class="cat-dropdown">
+                        <a href="camping.html">Carpas</a>
+                        <a href="camping.html">Sacos de dormir</a>
+                        <a href="camping.html">Cocinillas</a>
+                        <a href="camping.html">Mochilas y outdoor</a>
+                    </div>
+                </li>
+                <li class="cat-item"><a href="#about"><i class="fas fa-store"></i> Nosotros</a></li>
+                <li class="cat-item"><a href="#map"><i class="fas fa-map-marked-alt"></i> Ubicación</a></li>
+            </ul>
+            <a href="#ofertas" class="cat-offers-link"><i class="fas fa-tag"></i> Ofertas</a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -204,6 +267,112 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas / Más vendidos (grilla estilo Armarket) -->
+    <section id="ofertas" class="offers-section section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-subtitle">TIENDA</div>
+                <h2 class="section-title">PRODUCTOS MÁS <span class="text-gradient">VENDIDOS</span></h2>
+                <p class="section-description">Selección destacada con los mejores precios. Consulta stock por WhatsApp.</p>
+            </div>
+
+            <div class="offers-grid" data-aos="fade-up">
+                <article class="shop-card">
+                    <div class="shop-card-badge sale">¡OFERTA!</div>
+                    <a href="caza.html" class="shop-card-img">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_605437-MLA95193772254_102025-F.webp" alt="Rifle Gamo Shadow 1000" loading="lazy">
+                    </a>
+                    <div class="shop-card-body">
+                        <span class="shop-card-cat">Caza</span>
+                        <h3 class="shop-card-name"><a href="caza.html">Rifle Gamo Shadow 1000</a></h3>
+                        <div class="shop-card-price">
+                            <span class="price-old">$189.000</span>
+                            <span class="price-now">$159.000</span>
+                        </div>
+                        <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20el%20Rifle%20Gamo%20Shadow%201000" target="_blank" class="add-cart-btn"><i class="fab fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-badge new">NUEVO</div>
+                    <a href="pesca.html" class="shop-card-img">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_899029-MLU73040549538_112023-O.webp" alt="Caña Shimano Stimula" loading="lazy">
+                    </a>
+                    <div class="shop-card-body">
+                        <span class="shop-card-cat">Pesca</span>
+                        <h3 class="shop-card-name"><a href="pesca.html">Caña Shimano Stimula 8'6"</a></h3>
+                        <div class="shop-card-price">
+                            <span class="price-now">$64.990</span>
+                        </div>
+                        <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20la%20Caña%20Shimano%20Stimula" target="_blank" class="add-cart-btn"><i class="fab fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-badge sale">¡OFERTA!</div>
+                    <a href="kayak.html" class="shop-card-img">
+                        <img src="kayak.png" alt="Kayak DUKHA Serra 10" loading="lazy">
+                    </a>
+                    <div class="shop-card-body">
+                        <span class="shop-card-cat">Kayaks</span>
+                        <h3 class="shop-card-name"><a href="kayak.html">Kayak DUKHA Serra 10</a></h3>
+                        <div class="shop-card-price">
+                            <span class="price-old">$399.000</span>
+                            <span class="price-now">$349.000</span>
+                        </div>
+                        <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20el%20Kayak%20DUKHA%20Serra%2010" target="_blank" class="add-cart-btn"><i class="fab fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-badge out">SIN STOCK</div>
+                    <a href="camping.html" class="shop-card-img">
+                        <img src="camping.jpg" alt="Carpa 4 personas" loading="lazy">
+                    </a>
+                    <div class="shop-card-body">
+                        <span class="shop-card-cat">Camping</span>
+                        <h3 class="shop-card-name"><a href="camping.html">Carpa 4 Personas Outdoor</a></h3>
+                        <div class="shop-card-price">
+                            <span class="price-now">$129.990</span>
+                        </div>
+                        <a href="https://wa.me/56941446141?text=Hola,%20quiero%20saber%20stock%20de%20la%20Carpa%204%20Personas" target="_blank" class="add-cart-btn"><i class="fab fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-badge sale">¡OFERTA!</div>
+                    <a href="pesca.html" class="shop-card-img">
+                        <img src="pesca deportiva.jpg" alt="Reel Daiwa BG 5000" loading="lazy">
+                    </a>
+                    <div class="shop-card-body">
+                        <span class="shop-card-cat">Pesca</span>
+                        <h3 class="shop-card-name"><a href="pesca.html">Reel Daiwa BG 5000</a></h3>
+                        <div class="shop-card-price">
+                            <span class="price-old">$119.000</span>
+                            <span class="price-now">$99.900</span>
+                        </div>
+                        <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20el%20Reel%20Daiwa%20BG%205000" target="_blank" class="add-cart-btn"><i class="fab fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-badge new">NUEVO</div>
+                    <a href="caza.html" class="shop-card-img">
+                        <img src="caza deportiva.jpg" alt="Pistola Umarex Beretta PX4" loading="lazy">
+                    </a>
+                    <div class="shop-card-body">
+                        <span class="shop-card-cat">Caza</span>
+                        <h3 class="shop-card-name"><a href="caza.html">Pistola Umarex Beretta PX4</a></h3>
+                        <div class="shop-card-price">
+                            <span class="price-now">$89.990</span>
+                        </div>
+                        <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20la%20Pistola%20Umarex%20Beretta%20PX4" target="_blank" class="add-cart-btn"><i class="fab fa-whatsapp"></i> Consultar</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -907,6 +1076,44 @@
                 }
             });
         });
+
+        // ============================================
+        // BUSCADOR SUPERIOR (barra utilitaria)
+        // ============================================
+        const utilityForm = document.getElementById('utilitySearchForm');
+        const utilityInput = document.getElementById('utilitySearchInput');
+        if (utilityForm) {
+            utilityForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const query = (utilityInput.value || '').trim().toLowerCase();
+                if (!query) return;
+                const match = categoryPages.find(item => query.includes(item.term));
+                if (match) { window.location.href = match.page; return; }
+                const prod = searchData.find(item =>
+                    item.name.toLowerCase().includes(query) ||
+                    item.category.toLowerCase().includes(query)
+                );
+                if (prod) { window.location.href = prod.page; return; }
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Sin resultados exactos',
+                    text: 'Explora nuestras categorías para encontrar lo que buscas.',
+                    confirmButtonText: 'Ver catálogos',
+                    confirmButtonColor: 'var(--primary-green)'
+                });
+            });
+        }
+
+        // ============================================
+        // TOGGLE BARRA DE CATEGORÍAS (móvil)
+        // ============================================
+        const catToggle = document.getElementById('catToggle');
+        const categoryMenu = document.getElementById('categoryMenu');
+        if (catToggle && categoryMenu) {
+            catToggle.addEventListener('click', () => {
+                categoryMenu.classList.toggle('open');
+            });
+        }
     </script>
 </body>
 </html>
